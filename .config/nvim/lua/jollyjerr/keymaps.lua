@@ -26,5 +26,6 @@ Maps.nmap('<leader>k', '<C-w>k')
 
 Maps.nmap('<leader>Q', ':qa!<cr>')
 Maps.nmap('<leader>w', ':wa!<cr>')
+Maps.nmap('<leader>W', ':wqa!<cr>')
 
 return Maps
