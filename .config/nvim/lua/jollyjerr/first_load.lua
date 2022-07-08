@@ -36,11 +36,6 @@ return function()
           {'nvim-lua/plenary.nvim'}
       }
     }
-    use {
-          'nvim-treesitter/nvim-treesitter',
-          run = ':TSUpdate'
-    }
-  
     use 'tpope/vim-fugitive'
     use 'tpope/vim-vinegar'
   
@@ -48,6 +43,11 @@ return function()
   	"windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {} end
     }
+    use {
+          'nvim-treesitter/nvim-treesitter',
+          run = ':TSUpdate'
+    }
+    use 'neovim/nvim-lspconfig'
   
     -- Leave this at the end after all plugins
     if packer_bootstrap then
