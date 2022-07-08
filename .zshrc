@@ -13,7 +13,6 @@ export LANG="en_US.UTF-8"
 set -o vi
 bindkey '^R' history-incremental-search-backward # Search
 setopt extendedglob nocaseglob globdots
-TERM=xterm
 
 # asdf init
 . /usr/local/opt/asdf/asdf.sh
