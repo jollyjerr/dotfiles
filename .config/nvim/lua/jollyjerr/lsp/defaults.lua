@@ -16,6 +16,8 @@ M.on_attach = function(_client, bufnr)
 
   vim.keymap.set('n', '<leader>qf', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+
+  vim.keymap.set('n', '<leader>rr', '<cmd>LspRestart<cr>')
 end
 
 return M
