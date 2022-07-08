@@ -1,4 +1,4 @@
-if require('jollyjerr.first_load')() then
+if require('jollyjerr.start')() then
 	return
 end
 

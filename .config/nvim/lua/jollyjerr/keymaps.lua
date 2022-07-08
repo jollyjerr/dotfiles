@@ -1,31 +1,32 @@
-local Maps = {}
+local M = {}
 
-Maps.map = function(mode, shortcut, command)
+M.map = function(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
 
-Maps.nmap = function(shortcut, command)
-  Maps.map('n', shortcut, command)
+M.nmap = function(shortcut, command)
+  M.map('n', shortcut, command)
 end
 
-Maps.imap = function(shortcut, command)
-  Maps.map('i', shortcut, command)
+M.imap = function(shortcut, command)
+  M.map('i', shortcut, command)
 end
 
 vim.g.mapleader = ' '
 
-Maps.imap('kj', '<ESC>')
+M.imap('kj', '<ESC>')
 
-Maps.nmap('<leader>v', '<C-w>v')
-Maps.nmap('<leader>s', '<C-w>s')
-Maps.nmap('<leader>h', '<C-w>h')
-Maps.nmap('<leader>l', '<C-w>l')
-Maps.nmap('<leader>q', '<C-w>q')
-Maps.nmap('<leader>j', '<C-w>j')
-Maps.nmap('<leader>k', '<C-w>k')
+M.nmap('<leader>v', '<C-w>v', {buffer=0})
+M.nmap('<leader>s', '<C-w>s')
+M.nmap('<leader>h', '<C-w>h')
+M.nmap('<leader>l', '<C-w>l')
+M.nmap('<leader>q', '<C-w>q')
+M.nmap('<leader>j', '<C-w>j')
+M.nmap('<leader>k', '<C-w>k')
+M.nmap('<leader>o', '<C-w>o')
 
-Maps.nmap('<leader>Q', ':qa!<cr>')
-Maps.nmap('<leader>w', ':wa!<cr>')
-Maps.nmap('<leader>W', ':wqa!<cr>')
+M.nmap('<leader>Q', ':qa!<cr>')
+M.nmap('<leader>w', ':wa!<cr>')
+M.nmap('<leader>W', ':wqa!<cr>')
 
-return Maps
+return M
