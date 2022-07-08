@@ -3,3 +3,4 @@ vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_next, opts)
 
 require('jollyjerr.lsp.go')
 require('jollyjerr.lsp.typescript')
+require('jollyjerr.lsp.lua')

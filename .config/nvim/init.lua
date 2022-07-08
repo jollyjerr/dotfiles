@@ -1,5 +1,5 @@
 if require('jollyjerr.start')() then
-	return
+    return
 end
 
 require('jollyjerr.keymaps')
