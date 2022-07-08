@@ -1,5 +1,6 @@
-# Dotfiles version control
+# Dotfiles 
 alias gdot="git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
+alias vidot="nvim ~/.config/nvim"
 
 # Git
 alias gaa="git add ."
