@@ -2,9 +2,14 @@
 
 all:
 	make oh-my-zsh
-	make asdf
 	make homebrew
+	make asdf
 	make mac
+	make lsp
+
+homebrew:
+	command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
+	brew bundle --file=./Brewfile
 
 zshdir = "$(HOME)/.oh-my-zsh"
 oh-my-zsh:
@@ -23,9 +28,8 @@ asdf:
 	asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git ; \
 	asdf install
 
-homebrew:
-	command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
-	brew bundle --file=./Brewfile
-
 mac:
 	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+lsp:
+	go install golang.org/x/tools/gopls@latest
