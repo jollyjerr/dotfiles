@@ -30,25 +30,22 @@ return function()
         use 'kyazdani42/nvim-web-devicons'
         use 'feline-nvim/feline.nvim'
 
-        use {
-            'nvim-telescope/telescope.nvim',
-            requires = {
-                { 'nvim-lua/plenary.nvim' }
-            }
-        }
+        use 'nvim-lua/plenary.nvim'
+        use 'nvim-telescope/telescope.nvim'
         use 'tpope/vim-fugitive'
         use 'tpope/vim-vinegar'
 
-        use {
-            "windwp/nvim-autopairs",
-            config = function() require("nvim-autopairs").setup {} end
-        }
+        use "windwp/nvim-autopairs"
         use {
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate'
         }
         use 'neovim/nvim-lspconfig'
 
+        use('jose-elias-alvarez/null-ls.nvim')
+        use('MunifTanjim/prettier.nvim')
+
+        use 'L3MON4D3/LuaSnip'
         use 'hrsh7th/nvim-cmp'
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'

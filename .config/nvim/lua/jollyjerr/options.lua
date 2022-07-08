@@ -16,6 +16,8 @@ vim.opt.incsearch = true
 vim.opt.hidden = true
 
 vim.opt.termguicolors = true
+vim.opt.syntax = 'on'
+vim.opt.laststatus = 3
+
 vim.cmd('let g:loaded_perl_provider = 0')
 
-vim.opt.syntax = 'on'
