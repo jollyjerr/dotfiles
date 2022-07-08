@@ -34,6 +34,7 @@ return function()
         use 'nvim-telescope/telescope.nvim'
         use 'tpope/vim-fugitive'
         use 'tpope/vim-vinegar'
+        use 'tpope/vim-surround'
 
         use "windwp/nvim-autopairs"
         use {
