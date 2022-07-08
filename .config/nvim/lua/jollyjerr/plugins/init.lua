@@ -1,0 +1,5 @@
+require('jollyjerr.plugins.edge')
+require('jollyjerr.plugins.feline')
+require('jollyjerr.plugins.autopairs')
+require('jollyjerr.plugins.telescope')
+require('jollyjerr.plugins.fugitive')
