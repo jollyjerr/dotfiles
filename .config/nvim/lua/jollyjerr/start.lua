@@ -4,7 +4,6 @@ local download_packer = function()
     end
 
     local directory = string.format("%s/site/pack/packer/start/", vim.fn.stdpath "data")
-
     vim.fn.mkdir(directory, "p")
 
     local out = vim.fn.system(
@@ -23,14 +22,17 @@ return function()
         return true
     end
 
-    require('packer').startup(function(use)
+    local packer = require('packer')
+
+    packer.startup(function(use)
         use "wbthomason/packer.nvim"
+        use 'nvim-lua/plenary.nvim'
 
         use 'sainnhe/edge'
+        use 'lewis6991/gitsigns.nvim'
         use 'kyazdani42/nvim-web-devicons'
         use 'feline-nvim/feline.nvim'
 
-        use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
         use 'tpope/vim-fugitive'
         use 'tpope/vim-vinegar'

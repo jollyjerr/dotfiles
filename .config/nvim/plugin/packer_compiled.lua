@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-vinegar"] = {
     loaded = true,
