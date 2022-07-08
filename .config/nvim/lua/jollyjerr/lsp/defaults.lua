@@ -8,7 +8,7 @@ M.on_attach = function(_client, bufnr)
   vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', bufopts)
   vim.keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<cr>', bufopts)
   vim.keymap.set('n', 'gi', '<cmd>Telescope lsp_implementations<cr>', bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', bufopts)
 
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>nF', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -19,5 +19,7 @@ M.on_attach = function(_client, bufnr)
 
   vim.keymap.set('n', '<leader>rr', '<cmd>LspRestart<cr>')
 end
+
+M.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 return M
