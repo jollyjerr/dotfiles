@@ -34,3 +34,4 @@ mac:
 lsp:
 	go install golang.org/x/tools/gopls@latest
 	npm install -g typescript typescript-language-server eslint prettier
+	npm install -g @tailwindcss/language-server

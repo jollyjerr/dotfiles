@@ -27,6 +27,16 @@ lspconfig.tsserver.setup({
     capabilities = defaults.get_capabilities(),
 })
 
+lspconfig.tailwindcss.setup({
+    on_attach = defaults.on_attach,
+    capabilities = defaults.get_capabilities(),
+    settings = {
+        tailwindCSS = {
+            classAttributes = { 'class', 'className', 'classList' }
+        }
+    }
+})
+
 local null_ls = require("null-ls")
 local prettier = require("prettier")
 
