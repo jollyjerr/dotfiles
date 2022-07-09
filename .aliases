@@ -36,11 +36,6 @@ alias vd="fd && vim ."
 alias vim="nvim"
 alias vi="nvim"
 
-# Tmux
-alias tat="tmux attach -t"
-alias tls="tmux ls"
-alias tns="tmux new-session -t"
-
 # Tools
 alias top="htop"
 alias cat="bat"
