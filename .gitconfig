@@ -16,12 +16,15 @@
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [push]
   default = current
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[credential]
-  helper = osxkeychain
 [pull]
   rebase = false
+[credential]
+  helper = osxkeychain
 [init]
   defaultBranch = main
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""

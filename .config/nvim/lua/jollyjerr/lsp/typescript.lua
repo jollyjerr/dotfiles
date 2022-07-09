@@ -40,8 +40,15 @@ null_ls.setup({
         end
 
         if client.resolved_capabilities.document_range_formatting then
-            vim.cmd("xnoremap <silent><buffer> <Leader>f :lua vim.lsp.buf.range_formatting({})<CR>")
+            vim.cmd("xnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.range_formatting({})<CR>")
         end
+
+        vim.cmd [[
+          augroup lsp_buf_format
+            au! BufWritePre <buffer>
+            autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
+          augroup END
+        ]]
     end,
 })
 
@@ -62,4 +69,3 @@ prettier.setup({
         "yaml",
     },
 })
-

@@ -18,6 +18,13 @@ M.on_attach = function(_, bufnr)
     vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, bufopts)
 
     vim.keymap.set('n', '<leader>rr', '<cmd>LspRestart<cr>')
+
+    vim.cmd [[
+      augroup lsp_buf_format
+        au! BufWritePre <buffer>
+        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
+      augroup END
+    ]]
 end
 
 M.get_capabilities = function() require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()) end
