@@ -1,8 +1,13 @@
-.PHONY: all oh-my-zsh asdf homebrew mac
+.PHONY: all files homebrew oh-my-zsh asdf mac lsp 
+
+files:
+	cp ./.dotfiles/{.zshrc,.aliases,.gitconfig,.tool-versions,Brewfile} ./
+	cp ./.dotfiles/.config/nvim ./.config/
+	cp ./.dorfiles/.config/kitty ./.config/
 
 all:
-	make oh-my-zsh
 	make homebrew
+	make oh-my-zsh
 	make asdf
 	make mac
 	make lsp

@@ -3,7 +3,8 @@
 ```sh
 cd
 git clone git@github.com:jollyjerr/dotfiles.git $HOME/.dotfiles
-mv .dotfiles/makefile ./
+cp .dotfiles/makefile ./
+make files
 make
 source ~/.zshrc
 gdot config --local status.showUntrackedFiles no

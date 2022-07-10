@@ -32,4 +32,6 @@ M.nmap('<leader>Q', ':qa!<cr>')
 M.nmap('<leader>w', ':wa!<cr>')
 M.nmap('<leader>W', ':wqa!<cr>')
 
+M.nmap('<leader>,', '<cmd>noh<cr>')
+
 return M
