@@ -4,6 +4,7 @@ files:
 	cp ./.dotfiles/{.zshrc,.aliases,.gitconfig,.tool-versions,Brewfile} ./
 	cp ./.dotfiles/.config/nvim ./.config/
 	cp ./.dorfiles/.config/kitty ./.config/
+	mkdir ~/.lsp_servers
 
 all:
 	make homebrew
@@ -40,3 +41,4 @@ lsp:
 	go install golang.org/x/tools/gopls@latest
 	npm install -g typescript typescript-language-server eslint prettier
 	npm install -g @tailwindcss/language-server
+	curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip && unzip elixir-ls.zip -d ~/.lsp_servers/elixir && chmod +x ~/.lsp_servers/elixir/language_server.sh
