@@ -34,9 +34,11 @@ return function()
         use 'feline-nvim/feline.nvim'
 
         use 'nvim-telescope/telescope.nvim'
-        use 'tpope/vim-fugitive'
         use 'tpope/vim-vinegar'
         use 'tpope/vim-surround'
+
+        use 'tpope/vim-fugitive'
+        use 'sindrets/diffview.nvim'
 
         use "windwp/nvim-autopairs"
         use {
