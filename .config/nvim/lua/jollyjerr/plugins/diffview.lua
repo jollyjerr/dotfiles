@@ -1,3 +1,4 @@
+local maps = require("jollyjerr.keymaps")
 local actions = require("diffview.actions")
 
 require("diffview").setup({
@@ -104,3 +105,5 @@ require("diffview").setup({
         },
     },
 })
+
+maps.nmap('<leader>pr', '<cmd>DiffviewOpen main<cr>')
