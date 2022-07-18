@@ -94,15 +94,15 @@ _G.packer_plugins = {
     path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
-  edge = {
-    loaded = true,
-    path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/edge",
-    url = "https://github.com/sainnhe/edge"
-  },
   ["feline.nvim"] = {
     loaded = true,
     path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/jeremiah.tabb/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["gitsigns.nvim"] = {
     loaded = true,

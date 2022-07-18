@@ -28,7 +28,8 @@ return function()
         use "wbthomason/packer.nvim"
         use 'nvim-lua/plenary.nvim'
 
-        use 'sainnhe/edge'
+        use 'projekt0n/github-nvim-theme'
+
         use 'lewis6991/gitsigns.nvim'
         use 'kyazdani42/nvim-web-devicons'
         use 'feline-nvim/feline.nvim'
