@@ -5,6 +5,5 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.config/zsh/aliases
 source $HOME/.config/zsh/options
+source $HOME/.config/zsh/plugins
 
-# asdf init
-. /usr/local/opt/asdf/asdf.sh

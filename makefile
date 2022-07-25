@@ -1,4 +1,12 @@
-.PHONY: all files homebrew oh-my-zsh asdf mac lsp 
+.PHONY: all files homebrew zsh-setup asdf lsp 
+
+all:
+	make files
+	make homebrew
+	make zsh-setup
+	make asdf
+	make mac
+	make lsp
 
 files:
 	cp ./.dotfiles/{.zshrc,.aliases,.gitconfig,.tool-versions,Brewfile} ./
@@ -6,22 +14,17 @@ files:
 	cp ./.dorfiles/.config/kitty ./.config/
 	mkdir ~/.lsp_servers
 
-all:
-	make homebrew
-	make oh-my-zsh
-	make asdf
-	make mac
-	make lsp
-
 homebrew:
 	command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
 	brew bundle --file=./Brewfile
 
-zshdir = "$(HOME)/.oh-my-zsh"
-oh-my-zsh:
+zshdir = $(HOME)/.zsh-setup
+zshdatadir = $(HOME)/.local/share
+zsh-setup:
 	if [ ! -d $(zshdir) ]; then \
 		sh -c "curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"; \
 	fi
+	git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $(zshdatadir)/zsh-autocomplete
 
 asdf:
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git ; \
@@ -33,9 +36,6 @@ asdf:
 	asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git ; \
 	asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git ; \
 	asdf install
-
-mac:
-	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 lsp:
 	go install golang.org/x/tools/gopls@latest
