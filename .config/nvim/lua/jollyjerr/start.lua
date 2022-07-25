@@ -37,6 +37,7 @@ return function()
         use 'nvim-telescope/telescope.nvim'
         use 'tpope/vim-vinegar'
         use 'tpope/vim-surround'
+        use 'svermeulen/vim-yoink'
 
         use 'tpope/vim-fugitive'
         use 'sindrets/diffview.nvim'

@@ -178,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jollyjerr/.local/share/nvim/site/pack/packer/start/vim-vinegar",
     url = "https://github.com/tpope/vim-vinegar"
+  },
+  ["vim-yoink"] = {
+    loaded = true,
+    path = "/Users/jollyjerr/.local/share/nvim/site/pack/packer/start/vim-yoink",
+    url = "https://github.com/svermeulen/vim-yoink"
   }
 }
 
