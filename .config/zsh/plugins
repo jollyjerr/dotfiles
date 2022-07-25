@@ -2,5 +2,4 @@ plugins=(
     lol
 )
 
-source $HOME/.local/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 . /usr/local/opt/asdf/asdf.sh

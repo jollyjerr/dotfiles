@@ -24,7 +24,6 @@ zsh-setup:
 	if [ ! -d $(zshdir) ]; then \
 		sh -c "curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh"; \
 	fi
-	git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $(zshdatadir)/zsh-autocomplete
 
 asdf:
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git ; \
