@@ -1,3 +1,7 @@
+local maps = require("jollyjerr.keymaps")
+
+maps.nmap('Y', '<cmd>Yanks<cr>')
+
 vim.cmd [[
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
