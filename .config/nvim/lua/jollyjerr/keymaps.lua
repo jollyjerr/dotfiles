@@ -25,6 +25,11 @@ M.nmap('<leader>j', '<C-w>j')
 M.nmap('<leader>k', '<C-w>k')
 M.nmap('<leader>o', '<C-w>o')
 
+M.nmap('<leader>T', '<cmd>tabnew<cr>')
+M.nmap('<leader>tc', '<cmd>tabclose<cr>')
+M.nmap('<leader>tn', '<cmd>tabnext<cr>')
+M.nmap('<leader>tp', '<cmd>tabprevious<cr>')
+
 M.nmap('<leader>dn', vim.diagnostic.goto_next)
 M.nmap('<leader>dp', vim.diagnostic.goto_prev)
 
