@@ -40,4 +40,5 @@ lsp:
 	go install golang.org/x/tools/gopls@latest
 	npm install -g typescript typescript-language-server eslint prettier
 	npm install -g @tailwindcss/language-server
+	npm install -g svelte-language-server
 	curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip && unzip elixir-ls.zip -d ~/.lsp_servers/elixir && chmod +x ~/.lsp_servers/elixir/language_server.sh

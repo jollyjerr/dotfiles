@@ -57,9 +57,6 @@ return function()
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
-
-        -- TODO remove this when tree sitter elixir works
-        use 'elixir-editors/vim-elixir'
     end)
 
     return false
