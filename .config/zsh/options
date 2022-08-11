@@ -1,7 +1,0 @@
-export EDITOR=nvim
-export LANG="en_US.UTF-8"
-
-set -o vi
-
-bindkey '^R' history-incremental-search-backward
-setopt extendedglob nocaseglob globdots

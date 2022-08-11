@@ -1,5 +1,0 @@
-plugins=(
-    lol
-)
-
-. /usr/local/opt/asdf/asdf.sh
