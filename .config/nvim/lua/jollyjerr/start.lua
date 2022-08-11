@@ -1,8 +1,4 @@
 local download_packer = function()
-    if vim.fn.input "Download Packer? (y for yes)" ~= "y" then
-        return
-    end
-
     local directory = string.format("%s/site/pack/packer/start/", vim.fn.stdpath "data")
     vim.fn.mkdir(directory, "p")
 
@@ -25,38 +21,44 @@ return function()
     local packer = require('packer')
 
     packer.startup(function(use)
+        -- Core plugins everything else uses
         use "wbthomason/packer.nvim"
         use 'nvim-lua/plenary.nvim'
-
-        use 'projekt0n/github-nvim-theme'
-
-        use 'lewis6991/gitsigns.nvim'
-        use 'kyazdani42/nvim-web-devicons'
-        use 'feline-nvim/feline.nvim'
-
-        use 'nvim-telescope/telescope.nvim'
-        use 'tpope/vim-vinegar'
-        use 'tpope/vim-surround'
-        use 'svermeulen/vim-yoink'
-
-        use 'tpope/vim-fugitive'
-        use 'sindrets/diffview.nvim'
-
-        use "windwp/nvim-autopairs"
         use {
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate'
         }
+
+        -- Navigation and editing
+        use 'nvim-telescope/telescope.nvim'
+        use 'tpope/vim-vinegar'
+        use 'tpope/vim-surround'
+        use 'svermeulen/vim-yoink'
+        use "windwp/nvim-autopairs"
+
+        -- Git
+        use 'tpope/vim-fugitive'
+        use 'sindrets/diffview.nvim'
+
+        -- LSP servers, DAP servers, linters, and formatters
         use 'neovim/nvim-lspconfig'
+        use 'williamboman/mason.nvim'
+        use 'williamboman/mason-lspconfig.nvim'
+        use 'jose-elias-alvarez/null-ls.nvim'
+        use 'MunifTanjim/prettier.nvim'
 
-        use('jose-elias-alvarez/null-ls.nvim')
-        use('MunifTanjim/prettier.nvim')
-
+        -- Code Completion
         use 'L3MON4D3/LuaSnip'
         use 'hrsh7th/nvim-cmp'
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
+
+        -- a e s t h e t i c
+        use 'projekt0n/github-nvim-theme'
+        use 'lewis6991/gitsigns.nvim'
+        use 'kyazdani42/nvim-web-devicons'
+        use 'feline-nvim/feline.nvim'
     end)
 
     return false
