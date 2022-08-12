@@ -62,6 +62,10 @@ alias top="htop"
 alias cat="bat"
 
 ## -- Sources
+
+# PATH
 export PATH="/opt/homebrew/bin:$PATH"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+source $HOME/.cargo/env
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
 

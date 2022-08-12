@@ -1,10 +1,11 @@
-.PHONY: all files homebrew zsh-setup asdf 
+.PHONY: all files homebrew zsh-setup asdf rustup
 
 all:
 	make files
 	make homebrew
 	make zsh-setup
 	make asdf
+	make rustup
 
 files:
 	cp ./.dotfiles/{.zshrc,.gitconfig,.tool-versions,Brewfile} ./
@@ -29,5 +30,7 @@ asdf:
 	asdf plugin-add golang https://github.com/kennyp/asdf-golang.git ; \
 	asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git ; \
 	asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git ; \
-	asdf plugin-add rust https://github.com/asdf-community/asdf-rust.git ; \
 	asdf install
+
+rustup:
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
