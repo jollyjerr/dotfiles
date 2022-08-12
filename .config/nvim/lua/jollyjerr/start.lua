@@ -55,7 +55,7 @@ return function()
         use 'hrsh7th/cmp-path'
 
         -- a e s t h e t i c
-        use 'projekt0n/github-nvim-theme'
+        use 'EdenEast/nightfox.nvim'
         use 'lewis6991/gitsigns.nvim'
         use 'kyazdani42/nvim-web-devicons'
         use 'feline-nvim/feline.nvim'
