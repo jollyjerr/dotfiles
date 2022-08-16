@@ -25,9 +25,11 @@ alias vidot="nvim ~/.config/nvim"
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gpo="git push origin"
-alias gs="git stash"
-alias gsp="git stash pop"
-alias gsl="git stash list"
+alias gs="git status"
+alias gl="git log"
+alias gst="git stash"
+alias gstp="git stash pop"
+alias gstl="git stash list"
 alias gr="git remote -v"
 alias gcb="git checkout -b"
 alias gback="git checkout -"
@@ -56,13 +58,13 @@ alias vd="fd && vim ."
 # Vim
 alias vim="nvim"
 alias vi="nvim"
+alias ci="nvim" # I can't type lol
 
 # Tools
 alias top="htop"
 alias cat="bat"
 
 ## -- Sources
-
 # PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
