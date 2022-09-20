@@ -22,7 +22,7 @@ return function()
 
     packer.startup(function(use)
         -- Core plugins everything else uses
-        use "wbthomason/packer.nvim"
+        use 'wbthomason/packer.nvim'
         use 'nvim-lua/plenary.nvim'
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -34,7 +34,8 @@ return function()
         use 'tpope/vim-vinegar'
         use 'tpope/vim-surround'
         use 'svermeulen/vim-yoink'
-        use "windwp/nvim-autopairs"
+        use 'windwp/nvim-autopairs'
+        use 'buztard/vim-rel-jump'
 
         -- Git
         use 'tpope/vim-fugitive'
