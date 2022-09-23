@@ -38,5 +38,6 @@ M.nmap('<leader>w', ':wa!<cr>')
 M.nmap('<leader>W', ':wqa!<cr>')
 
 M.nmap('<leader>,', '<cmd>noh<cr>')
+M.nmap('<leader>cp', '<cmd>let @+=@%<cr>')
 
 return M
