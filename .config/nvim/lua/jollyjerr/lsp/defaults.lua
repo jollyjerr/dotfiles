@@ -18,11 +18,11 @@ M.add_read_only_maps = function(bufopts)
 end
 
 M.add_formatting = function(bufopts)
-    vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>F', vim.lsp.buf.format, bufopts)
     vim.cmd [[
       augroup lsp_buf_format
         au! BufWritePre <buffer>
-        autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
+        autocmd BufWritePre <buffer> :lua vim.lsp.buf.format()
       augroup END
     ]]
 end

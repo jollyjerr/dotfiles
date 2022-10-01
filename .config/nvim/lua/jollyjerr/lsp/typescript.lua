@@ -4,7 +4,7 @@ local lspconfig = require('lspconfig')
 
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
 
         local options = defaults.get_buffer_options(bufnr)
         defaults.add_read_only_maps(options)
@@ -20,18 +20,18 @@ null_ls.setup({
         null_ls.builtins.diagnostics.eslint,
     },
     on_attach = function(client, _)
-        if client.resolved_capabilities.document_formatting then
-            vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.formatting()<CR>")
+        if client.server_capabilities.documentFormattingProvider then
+            vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.format({async = true})<CR>")
         end
 
-        if client.resolved_capabilities.document_range_formatting then
+        if client.server_capabilities.documentRangeFormattingProvider then
             vim.cmd("xnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.range_formatting({})<CR>")
         end
 
         vim.cmd [[
           augroup lsp_buf_format
             au! BufWritePre <buffer>
-            autocmd BufWritePre <buffer> :lua vim.lsp.buf.formatting_sync()
+            autocmd BufWritePre <buffer> :lua vim.lsp.buf.format()
           augroup END
         ]]
     end,
