@@ -1,4 +1,4 @@
-local defaults = require('jollyjerr.lsp.defaults')
+local defaults = require('jollyjerr.modules.lsp')
 
 local lspconfig = require('lspconfig')
 

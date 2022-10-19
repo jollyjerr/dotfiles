@@ -1,4 +1,4 @@
-local maps = require "jollyjerr.keymaps"
+local maps = require("jollyjerr.modules.keymaps")
 
 maps.nmap('<C-f>', '<cmd>Telescope find_files<cr>')
 maps.nmap('<leader>fp', '<cmd>Telescope live_grep<cr>')

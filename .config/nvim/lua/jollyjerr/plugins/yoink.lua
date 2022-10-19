@@ -1,4 +1,4 @@
-local maps = require("jollyjerr.keymaps")
+local maps = require("jollyjerr.modules.keymaps")
 
 maps.nmap('<leader>Y', '<cmd>Yanks<cr>')
 

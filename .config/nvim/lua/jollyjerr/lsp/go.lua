@@ -1,4 +1,4 @@
-local defaults = require('jollyjerr.lsp.defaults')
+local defaults = require('jollyjerr.modules.lsp')
 
 require('lspconfig').gopls.setup({
     on_attach = defaults.on_attach,

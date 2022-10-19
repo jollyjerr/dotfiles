@@ -1,9 +1,6 @@
 local style = require("jollyjerr.modules.style")
 
----Generate a color palette from the current applied colorscheme
----@return table
 local function generate_pallet_from_colorscheme()
-    -- stylua: ignore
     local color_map = {
         black   = { index = 0, default = "#393b44" },
         red     = { index = 1, default = "#c94f6d" },
@@ -29,10 +26,9 @@ local function generate_pallet_from_colorscheme()
     return pallet
 end
 
-_G._genreate_user_tabline_highlights = function()
+local function genreate_user_tabline_highlights()
     local pal = generate_pallet_from_colorscheme()
 
-    -- stylua: ignore
     local sl_colors = {
         Black   = { fg = pal.black, bg = pal.white },
         Red     = { fg = pal.red, bg = pal.sl.bg },
@@ -51,7 +47,6 @@ _G._genreate_user_tabline_highlights = function()
     end
 
     local groups = {
-        -- tabline
         UserTLHead = { fg = pal.fill.bg, bg = pal.cyan },
         UserTLHeadSep = { fg = pal.cyan, bg = pal.fill.bg },
         UserTLActive = { fg = pal.sel.fg, bg = pal.sel.bg, bold = true },
@@ -63,12 +58,11 @@ _G._genreate_user_tabline_highlights = function()
     style.set_highlights(vim.tbl_extend("force", colors, groups))
 end
 
-_genreate_user_tabline_highlights()
-
+genreate_user_tabline_highlights()
 vim.api.nvim_create_augroup("UserTablineHighlightGroups", { clear = true })
 vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
     callback = function()
-        _genreate_user_tabline_highlights()
+        genreate_user_tabline_highlights()
     end,
 })
 

@@ -1,4 +1,4 @@
-local maps = require "jollyjerr.keymaps"
+local maps = require("jollyjerr.modules.keymaps")
 
 maps.nmap('<leader>gaa', '<cmd>Git add .<cr>')
 maps.nmap('<leader>gc', '<cmd>Git commit<cr>')

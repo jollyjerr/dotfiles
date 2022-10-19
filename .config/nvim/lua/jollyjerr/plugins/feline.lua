@@ -1,9 +1,6 @@
 local style = require("jollyjerr.modules.style")
 
----Generate a color palette from the current applied colorscheme
----@return table
 local function generate_pallet_from_colorscheme()
-    -- stylua: ignore
     local color_map = {
         black   = { index = 0, default = "#393b44" },
         red     = { index = 1, default = "#c94f6d" },
@@ -38,10 +35,9 @@ local function generate_pallet_from_colorscheme()
     return pallet
 end
 
-_G._generate_user_statusline_highlights = function()
+local function generate_user_statusline_highlights()
     local pal = generate_pallet_from_colorscheme()
 
-    -- stylua: ignore
     local sl_colors = {
         Black   = { fg = pal.black, bg = pal.white },
         Red     = { fg = pal.red, bg = pal.sl.bg },
@@ -63,7 +59,6 @@ _G._generate_user_statusline_highlights = function()
         { fg = pal.white, bg = pal.black }
 
     local groups = {
-        -- statusline
         UserSLHint = { fg = pal.sl.bg, bg = pal.hint, bold = true },
         UserSLInfo = { fg = pal.sl.bg, bg = pal.info, bold = true },
         UserSLWarn = { fg = pal.sl.bg, bg = pal.warn, bold = true },
@@ -85,12 +80,11 @@ _G._generate_user_statusline_highlights = function()
     style.set_highlights(vim.tbl_extend("force", colors, groups))
 end
 
-_generate_user_statusline_highlights()
-
+generate_user_statusline_highlights()
 vim.api.nvim_create_augroup("UserStatuslineHighlightGroups", { clear = true })
 vim.api.nvim_create_autocmd({ "SessionLoadPost", "ColorScheme" }, {
     callback = function()
-        _generate_user_statusline_highlights()
+        generate_user_statusline_highlights()
     end,
 })
 

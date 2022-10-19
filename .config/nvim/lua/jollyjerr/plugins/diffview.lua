@@ -1,4 +1,4 @@
-local maps = require("jollyjerr.keymaps")
+local maps = require("jollyjerr.modules.keymaps")
 local actions = require("diffview.actions")
 
 require("diffview").setup({
