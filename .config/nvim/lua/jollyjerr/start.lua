@@ -61,6 +61,7 @@ return function()
         use 'lewis6991/gitsigns.nvim'
         use 'kyazdani42/nvim-web-devicons'
         use 'feline-nvim/feline.nvim'
+        use 'nanozuki/tabby.nvim'
     end)
 
     return false
