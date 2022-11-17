@@ -23,17 +23,10 @@ null_ls.setup({
         if client.server_capabilities.documentFormattingProvider then
             vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.format({async = true})<CR>")
         end
-
         if client.server_capabilities.documentRangeFormattingProvider then
-            vim.cmd("xnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.range_formatting({})<CR>")
+            vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.range_formatting({})<CR>")
         end
-
-        vim.cmd [[
-          augroup lsp_buf_format
-            au! BufWritePre <buffer>
-            autocmd BufWritePre <buffer> :lua vim.lsp.buf.format()
-          augroup END
-        ]]
+        vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.organizeImports")
     end,
 })
 
