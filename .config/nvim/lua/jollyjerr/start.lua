@@ -37,6 +37,7 @@ return function()
         use 'windwp/nvim-autopairs'
         use 'buztard/vim-rel-jump'
         use 'numToStr/Comment.nvim'
+        use 'unblevable/quick-scope'
 
         -- Git
         use 'tpope/vim-fugitive'
