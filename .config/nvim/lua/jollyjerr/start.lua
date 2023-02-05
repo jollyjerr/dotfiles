@@ -55,6 +55,7 @@ return function()
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-path'
+        use 'f3fora/cmp-spell'
 
         -- a e s t h e t i c
         use 'EdenEast/nightfox.nvim'

@@ -20,6 +20,15 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = "buffer", keyword_length = 5 },
         { name = 'luasnip' },
+        {
+            name = 'spell',
+            option = {
+                keep_all_entries = true,
+                enable_in_context = function()
+                    return require('cmp.config.context').in_treesitter_capture('spell')
+                end
+            }
+        }
     }, {
         { name = 'buffer' },
     }),
