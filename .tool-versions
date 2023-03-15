@@ -5,3 +5,4 @@ python 3.9.6
 elixir 1.13.3-otp-24
 erlang 24.3.4
 golang 1.18.3
+java openjdk-19
