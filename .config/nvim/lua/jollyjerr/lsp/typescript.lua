@@ -1,5 +1,5 @@
 local defaults = require('jollyjerr.modules.lsp')
-
+local maps = require('jollyjerr.modules.keymaps')
 local lspconfig = require('lspconfig')
 
 lspconfig.tsserver.setup({
@@ -26,7 +26,9 @@ null_ls.setup({
         if client.server_capabilities.documentRangeFormattingProvider then
             vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.range_formatting({})<CR>")
         end
-        vim.cmd("nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.organizeImports")
+
+        maps.nmap('<leader>P', ':Prettier<cr>')
+        maps.nmap('<leader>E', ':EslintFixAll<cr>')
     end,
 })
 
