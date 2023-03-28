@@ -1,8 +1,8 @@
-local maps = require("jollyjerr.modules.keymaps")
+local maps = require('jollyjerr.modules.keymaps')
 
 maps.nmap('<leader>Y', '<cmd>Yanks<cr>')
 
-vim.cmd [[
+vim.cmd([[
 nmap <c-n> <plug>(YoinkPostPasteSwapBack)
 nmap <c-p> <plug>(YoinkPostPasteSwapForward)
 
@@ -16,4 +16,4 @@ nmap ]y <plug>(YoinkRotateForward)
 
 nmap y <plug>(YoinkYankPreserveCursorPosition)
 xmap y <plug>(YoinkYankPreserveCursorPosition)
-]]
+]])

@@ -1,6 +1,4 @@
-local maps = require("jollyjerr.modules.keymaps")
-
-vim.g.mapleader = ' '
+local maps = require('jollyjerr.modules.keymaps')
 
 maps.imap('kj', '<ESC>')
 
