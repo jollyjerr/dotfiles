@@ -20,9 +20,10 @@ null_ls.setup({
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.stylua,
   },
-  on_attach = function(client, _)
+  on_attach = function(client, bufnr)
     if client.server_capabilities.documentFormattingProvider then
-      vim.cmd('nnoremap <silent><buffer> <Leader>F :lua vim.lsp.buf.format({async = true})<CR>')
+      local bufopts = defaults.get_buffer_options(bufnr)
+      vim.keymap.set('n', '<leader>F', vim.lsp.buf.format, bufopts)
     end
     maps.nmap('<leader>P', ':Prettier<cr>')
     maps.nmap('<leader>E', ':EslintFixAll<cr>')
