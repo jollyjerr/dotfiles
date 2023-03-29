@@ -25,11 +25,9 @@ alias vidot="nvim ~/.config/nvim"
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gpo="git push origin"
-alias gs="git status"
-alias gl="git log"
-alias gst="git stash"
-alias gstp="git stash pop"
-alias gstl="git stash list"
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gsl="git stash list"
 alias gr="git remote -v"
 alias gcb="git checkout -b"
 alias gback="git checkout -"
@@ -52,7 +50,7 @@ function mkcdir() {
     cd -P -- "$1"
 }
 alias cpwd="pwd | pbcopy"
-alias fd="cd ~ && cd \$(find workspace -path \"*\/.*\" -prune -o -name node_modules -prune -o -type d -print | fzf)"
+alias fd="cd ~ && cd \$(find code -path \"*\/.*\" -prune -o -name node_modules -prune -o -type d -print | fzf)"
 alias vd="fd && vim ."
 
 # Vim
@@ -65,9 +63,7 @@ alias top="htop"
 alias cat="bat"
 
 ## -- Sources
-# PATH
-export PATH="/opt/homebrew/bin:$PATH"
+eval $(/opt/homebrew/bin/brew shellenv)
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
-source $HOME/.cargo/env
-source /opt/homebrew/opt/asdf/libexec/asdf.sh
-
+export PATH=~/libraries/depot_tools:$PATH
