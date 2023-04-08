@@ -61,7 +61,7 @@ alias ci="nvim" # I can't type lol
 # Tools
 alias top="htop"
 alias cat="bat"
-alias kittytheme="kitty +kitten themes"
+alias kittytheme="kitty +kitten themes --cache-age 0"
 
 ## -- Sources
 eval $(/opt/homebrew/bin/brew shellenv)
