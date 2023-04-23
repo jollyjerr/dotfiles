@@ -11,6 +11,7 @@ maps.nmap('<leader>j', '<C-w>j')
 maps.nmap('<leader>k', '<C-w>k')
 maps.nmap('<leader>o', '<C-w>o')
 maps.nmap('<leader>O', ':%bd|e#|bd#<cr>')
+maps.nmap('<leader>P', ':e ')
 
 maps.nmap('<leader>T', '<cmd>tabnew<cr>')
 maps.nmap('<leader>tc', '<cmd>tabclose<cr>')

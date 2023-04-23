@@ -1,3 +1,15 @@
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = { '%.git/', 'node_modules/' },
+  },
+  pickers = {
+    find_files = {
+      git_files = false,
+      hidden = true,
+    },
+  },
+})
+
 local maps = require('jollyjerr.modules.keymaps')
 
 maps.nmap('<C-f>', '<cmd>Telescope find_files<cr>')
@@ -7,8 +19,5 @@ maps.nmap('<leader>fm', '<cmd>Telescope marks<cr>')
 maps.nmap('<leader>fs', '<cmd>Telescope spell_suggest<cr>')
 maps.nmap('<leader>fk', '<cmd>Telescope keymaps<cr>')
 maps.nmap('<leader>fb', '<cmd>Telescope current_buffer_fuzzy_find<cr>')
-
--- TODO bug with Telescope breaking this?
-maps.nmap('<leader>fr', '<cmd>reg<cr>')
-
+maps.nmap('<leader>fr', '<cmd>Telescope registers<cr>')
 maps.nmap('<leader>da', '<cmd>Telescope diagnostics<cr>')

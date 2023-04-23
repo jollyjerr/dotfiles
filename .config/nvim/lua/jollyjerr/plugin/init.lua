@@ -1,10 +1,18 @@
 return {
-  -- Core plugins everything else uses
+  -- core plugins
+  {
+    'EdenEast/nightfox.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd('colorscheme duskfox')
+    end,
+  },
   'wbthomason/packer.nvim',
   'nvim-lua/plenary.nvim',
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
-  -- Navigation and editing
+  -- navigation and editing
   'nvim-telescope/telescope.nvim',
   'tpope/vim-vinegar',
   'tpope/vim-surround',
@@ -13,7 +21,7 @@ return {
   'buztard/vim-rel-jump',
   'numToStr/Comment.nvim',
 
-  -- Git
+  -- git
   'tpope/vim-fugitive',
   'sindrets/diffview.nvim',
 
@@ -24,7 +32,7 @@ return {
   'jose-elias-alvarez/null-ls.nvim',
   'MunifTanjim/prettier.nvim',
 
-  -- Code Completion
+  -- code completion
   'L3MON4D3/LuaSnip',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
@@ -33,9 +41,17 @@ return {
   'f3fora/cmp-spell',
 
   -- a e s t h e t i c
-  'EdenEast/nightfox.nvim',
   'lewis6991/gitsigns.nvim',
   'kyazdani42/nvim-web-devicons',
   'feline-nvim/feline.nvim',
   'nanozuki/tabby.nvim',
+
+  -- ai dev tools
+  {
+    'jackMort/ChatGPT.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+  },
 }
