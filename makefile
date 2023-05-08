@@ -40,7 +40,7 @@ format-check:
 	stylua .config/nvim/**/*.lua --config-path .config/nvim/stylua.toml --check
 
 nerdfont:
-	curl -o nerd-font-symbols.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/NerdFontsSymbolsOnly.zip
+	curl -o nerd-font-symbols.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/NerdFontsSymbolsOnly.zip
 	unzip nerd-font-symbols.zip -d ~/Library/Fonts
 	rm -f nerd-font-symbols.zip
 
