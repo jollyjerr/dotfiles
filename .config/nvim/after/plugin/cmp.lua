@@ -1,6 +1,7 @@
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 local cmp = require('cmp')
+local cmp_types = require('cmp.types')
 
 cmp.setup({
   snippet = {
@@ -34,6 +35,6 @@ cmp.setup({
   }),
   experimental = {
     native_menu = false,
-    ghost_text = true,
+    ghost_text = { cmp_types.cmp.TriggerEvent.TextChanged },
   },
 })
