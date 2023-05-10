@@ -45,6 +45,7 @@ return {
   'kyazdani42/nvim-web-devicons',
   'feline-nvim/feline.nvim',
   'nanozuki/tabby.nvim',
+  'lukas-reineke/indent-blankline.nvim',
 
   -- ai dev tools
   {

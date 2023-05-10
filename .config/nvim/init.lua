@@ -14,5 +14,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup('jollyjerr.plugin')
-
 require('jollyjerr.lsp')
