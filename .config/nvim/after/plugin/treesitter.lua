@@ -15,7 +15,8 @@ require('nvim-treesitter.configs').setup({
     enable = true,
     disable = { 'diff' },
   },
-  indent = {
-    enable = true,
-  },
+  -- so close, but not good enough yet
+  -- indent = {
+  --   enable = true,
+  -- },
 })
