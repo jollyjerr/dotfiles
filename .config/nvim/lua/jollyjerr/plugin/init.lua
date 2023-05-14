@@ -8,7 +8,6 @@ return {
       vim.cmd('colorscheme duskfox')
     end,
   },
-  'wbthomason/packer.nvim',
   'nvim-lua/plenary.nvim',
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 
