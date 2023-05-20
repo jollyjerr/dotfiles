@@ -22,7 +22,6 @@ return {
 
   -- git
   'tpope/vim-fugitive',
-  'sindrets/diffview.nvim',
 
   -- LSP servers, DAP servers, linters, and formatters
   'neovim/nvim-lspconfig',
