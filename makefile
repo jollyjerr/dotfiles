@@ -45,6 +45,7 @@ nerdfont:
 	rm -f nerd-font-symbols.zip
 
 update:
+	$(ZSH)/tools/upgrade.sh
 	brew update
 	brew upgrade
 	brew upgrade --cask
