@@ -28,7 +28,6 @@ return {
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'jose-elias-alvarez/null-ls.nvim',
-  'MunifTanjim/prettier.nvim',
 
   -- code completion
   'L3MON4D3/LuaSnip',

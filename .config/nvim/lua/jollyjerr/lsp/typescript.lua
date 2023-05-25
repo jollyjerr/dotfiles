@@ -1,6 +1,7 @@
 local defaults = require('jollyjerr.modules.lsp')
 local lspconfig = require('lspconfig')
 local maps = require('jollyjerr.modules.keymaps')
+local null_ls = require('null-ls')
 
 lspconfig.tsserver.setup({
   on_attach = function(client, bufnr)
@@ -12,38 +13,19 @@ lspconfig.tsserver.setup({
   capabilities = defaults.get_capabilities(),
 })
 
-local null_ls = require('null-ls')
-local prettier = require('prettier')
-
 null_ls.setup({
   sources = {
     null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.prettierd
   },
   on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      local bufopts = defaults.get_buffer_options(bufnr)
-      vim.keymap.set('n', '<leader>F', vim.lsp.buf.format, bufopts)
+    if client.supports_method('textDocument/formatting') then
+      vim.keymap.set('n', '<leader>F', function()
+        vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
+      end, { buffer = bufnr, desc = '[lsp] format' })
     end
-    maps.nmap('<leader>P', ':Prettier<cr>')
-    maps.nmap('<leader>E', ':EslintFixAll<cr>')
-  end,
-})
 
-prettier.setup({
-  bin = 'prettier',
-  filetypes = {
-    'css',
-    'graphql',
-    'html',
-    'javascript',
-    'javascriptreact',
-    'json',
-    'less',
-    'markdown',
-    'scss',
-    'typescript',
-    'typescriptreact',
-    'yaml',
-  },
+    maps.nmap('<leader>EE', ':EslintFixAll<cr>')
+  end,
 })
