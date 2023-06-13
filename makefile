@@ -47,7 +47,7 @@ nerdfont:
 update:
 	$(ZSH)/tools/upgrade.sh
 	brew update
-	brew upgrade
-	brew upgrade --cask
+	brew upgrade --greedy
+	brew upgrade --cask --greedy
 	nvim --headless "+Lazy! sync" +TSUpdateSync +MasonUpdate +qa
 
