@@ -19,6 +19,7 @@ return {
   'windwp/nvim-autopairs',
   'buztard/vim-rel-jump',
   'numToStr/Comment.nvim',
+  'easymotion/vim-easymotion',
 
   -- git
   'tpope/vim-fugitive',
