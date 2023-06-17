@@ -63,8 +63,11 @@ alias cat="bat"
 alias kittytheme="kitty +kitten themes --cache-age 0"
 
 # homebrew
-eval $(/opt/homebrew/bin/brew shellenv)
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+if [[ $(uname -p) = "arm64" ]]
+then
+  eval $(/opt/homebrew/bin/brew shellenv)
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
 
 # local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
