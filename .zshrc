@@ -63,17 +63,16 @@ alias cat="bat"
 alias kittytheme="kitty +kitten themes --cache-age 0"
 
 # homebrew and asdf
-if [[ $(uname -p) = "arm64" ]]
+if [[ $(uname -p) = "arm" ]]
 then
-  eval $(/opt/homebrew/bin/brew shellenv)
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+    eval $(/opt/homebrew/bin/brew shellenv)
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
 else
-  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+    . /usr/local/opt/asdf/libexec/asdf.sh
+    . /libexec/asdf.sh
 fi
 
 # local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$PATH
-
-. /usr/local/opt/asdf/libexec/asdf.sh
