@@ -1,5 +1,4 @@
 vim.opt.guicursor = ''
-vim.o.clipboard = 'unnamedplus'
 
 vim.opt.scrolloff = 10
 vim.opt.relativenumber = true
