@@ -8,3 +8,6 @@ maps.nmap('<leader>gl', '<cmd>Git log<cr>')
 maps.nmap('<leader>cd', '<cmd>Git diff<cr>')
 maps.nmap('<leader>ds', '<cmd>Git diff --staged<cr>')
 maps.nmap('<leader>gb', '<cmd>Git blame<cr>')
+
+maps.nmap('<leader>prb', '<cmd>G difftool main<cr>')
+maps.nmap('<leader>prf', '<cmd>Gvdiff main<cr>')
