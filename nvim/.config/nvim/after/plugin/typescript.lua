@@ -13,9 +13,15 @@ lspconfig.tsserver.setup({
   capabilities = defaults.get_capabilities(),
 })
 
+lspconfig.eslint.setup({
+  on_attach = function(_client, _bufnr)
+    maps.nmap('<leader>EE', ':EslintFixAll<cr>')
+  end,
+  capabilities = defaults.get_capabilities(),
+})
+
 null_ls.setup({
   sources = {
-    null_ls.builtins.diagnostics.eslint,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.prettierd,
   },
@@ -25,7 +31,5 @@ null_ls.setup({
         vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
       end, { buffer = bufnr, desc = '[lsp] format' })
     end
-
-    maps.nmap('<leader>EE', ':EslintFixAll<cr>')
   end,
 })
