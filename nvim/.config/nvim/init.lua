@@ -44,7 +44,6 @@ require('lazy').setup({
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'jose-elias-alvarez/null-ls.nvim',
     'folke/neodev.nvim',
 
     -- code completion

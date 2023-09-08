@@ -1,13 +1,13 @@
 require('telescope').setup({
-  defaults = {
-    file_ignore_patterns = { '%.git/', '%.lock' },
-  },
-  pickers = {
-    find_files = {
-      git_files = false,
-      hidden = true,
+    defaults = {
+        file_ignore_patterns = { '%.git/', '%.lock' },
     },
-  },
+    pickers = {
+        find_files = {
+            git_files = false,
+            hidden = true,
+        },
+    },
 })
 
 local maps = require('jollyjerr.keymaps')
