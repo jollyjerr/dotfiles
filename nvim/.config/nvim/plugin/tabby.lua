@@ -1,4 +1,4 @@
-local style = require('jollyjerr.modules.style')
+local style = require('jollyjerr.style')
 
 local function generate_pallet_from_colorscheme()
   local color_map = {

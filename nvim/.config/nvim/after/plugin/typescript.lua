@@ -1,6 +1,6 @@
-local defaults = require('jollyjerr.modules.lsp')
+local defaults = require('jollyjerr.lsp')
 local lspconfig = require('lspconfig')
-local maps = require('jollyjerr.modules.keymaps')
+local maps = require('jollyjerr.keymaps')
 local null_ls = require('null-ls')
 
 lspconfig.tsserver.setup({

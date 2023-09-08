@@ -1,4 +1,4 @@
-local maps = require('jollyjerr.modules.keymaps')
+local maps = require('jollyjerr.keymaps')
 
 require('chatgpt').setup()
 

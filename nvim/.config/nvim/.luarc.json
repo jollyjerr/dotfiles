@@ -1,0 +1,33 @@
+{
+    "workspace.library": [
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/neodev.nvim/types/stable",
+        "/opt/homebrew/Cellar/neovim/0.9.1/share/nvim/runtime/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nvim-autopairs/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/feline.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/mason.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/ChatGPT.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nui.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/tabby.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/mason-lspconfig.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/cmp-path/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nightfox.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/Comment.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/indent-blankline.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/null-ls.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/cmp-spell/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/cmp-buffer/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/plenary.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/LuaSnip/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/gitsigns.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nvim-treesitter/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/telescope.nvim/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nvim-web-devicons/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/Users/jeremiah.tabb/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/Users/jeremiah.tabb/.dotfiles/nvim/.config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}

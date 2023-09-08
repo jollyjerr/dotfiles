@@ -10,7 +10,7 @@ require('telescope').setup({
   },
 })
 
-local maps = require('jollyjerr.modules.keymaps')
+local maps = require('jollyjerr.keymaps')
 
 maps.nmap('<C-f>', '<cmd>Telescope find_files<cr>')
 
