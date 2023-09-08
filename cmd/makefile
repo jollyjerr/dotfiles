@@ -1,14 +1,8 @@
 all:
-	make files
 	make homebrew
 	make zsh-setup
 	make asdf
 	make rustup
-
-files:
-	cp ./.dotfiles/{.zshrc,.gitconfig,.tool-versions,Brewfile} ./
-	cp ./.dotfiles/.config/nvim ./.config/
-	cp ./.dotfiles/.config/kitty ./.config/
 
 homebrew:
 	command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
@@ -32,12 +26,6 @@ asdf:
 
 rustup:
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-format:
-	stylua .config/nvim/**/*.lua --config-path .config/nvim/stylua.toml
-
-format-check:
-	stylua .config/nvim/**/*.lua --config-path .config/nvim/stylua.toml --check
 
 nerdfont:
 	curl -o nerd-font-symbols.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/NerdFontsSymbolsOnly.zip
