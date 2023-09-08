@@ -8,9 +8,9 @@ COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export LANG="en_US.UTF-8"
+set -o vi
 bindkey '^R' history-incremental-search-backward
 setopt extendedglob nocaseglob globdots
-set -o vi
 
 # git
 alias gaa="git add ."
