@@ -1,4 +1,4 @@
-# init
+# options
 plugins=(
     lol
 )
@@ -6,19 +6,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
 COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
-
-# options
 export EDITOR=nvim
 export LANG="en_US.UTF-8"
-
-set -o vi
-
 bindkey '^R' history-incremental-search-backward
 setopt extendedglob nocaseglob globdots
-
-# dotfiles 
-alias gdot="git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME"
-alias vidot="nvim ~/.config/nvim"
+set -o vi
 
 # git
 alias gaa="git add ."
@@ -27,6 +19,7 @@ alias gpo="git push origin"
 alias gs="git stash"
 alias gsp="git stash pop"
 alias gsl="git stash list"
+alias gst="git status"
 alias gr="git remote -v"
 alias gcb="git checkout -b"
 alias gback="git checkout -"
@@ -74,5 +67,7 @@ fi
 
 # local config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+# path
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$PATH
