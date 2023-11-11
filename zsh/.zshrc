@@ -71,3 +71,5 @@ fi
 # path
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$PATH
+
+[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
