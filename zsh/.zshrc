@@ -1,6 +1,7 @@
 # options
 plugins=(
     lol
+    fzf
 )
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
@@ -9,7 +10,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR=nvim
 export LANG="en_US.UTF-8"
 set -o vi
-bindkey '^R' history-incremental-search-backward
 setopt extendedglob nocaseglob globdots
 
 # git
