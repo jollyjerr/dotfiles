@@ -62,7 +62,6 @@ then
     . /opt/homebrew/opt/asdf/libexec/asdf.sh
 else
     . /usr/local/opt/asdf/libexec/asdf.sh
-    . /libexec/asdf.sh
 fi
 
 # local config
