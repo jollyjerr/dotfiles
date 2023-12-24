@@ -1,8 +1,9 @@
-all:
+dotfiles:
 	make zsh-setup
 	make homebrew
 	make asdf
 	make rustup
+	make nerdfont
 
 homebrew:
 	brew bundle --file=./Brewfile
