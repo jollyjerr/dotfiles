@@ -1,11 +1,10 @@
 all:
-	make homebrew
 	make zsh-setup
+	make homebrew
 	make asdf
 	make rustup
 
 homebrew:
-	command -v brew >/dev/null 2>&1 || { echo >&2 "Installing Homebrew Now"; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
 	brew bundle --file=./Brewfile
 
 zshdir = $(HOME)/.zsh-setup
@@ -16,12 +15,13 @@ zsh-setup:
 
 asdf:
 	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git ; \
-	asdf plugin-add pnpm ; \
-	asdf plugin-add python ; \
+	asdf plugin add pnpm ; \
+	asdf plugin add python ; \
 	asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git ; \
-	asdf plugin-add golang https://github.com/kennyp/asdf-golang.git ; \
-	asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git ; \
+	asdf plugin add golang https://github.com/kennyp/asdf-golang.git ; \
+	asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git ; \
 	asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git ; \
+	asdf plugin add java https://github.com/halcyon/asdf-java.git ; \
 	asdf install
 
 rustup:
