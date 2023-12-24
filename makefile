@@ -15,9 +15,3 @@ ensureHomebrew:
 
 ensureStow:
 	command -v stow >/dev/null 2>&1 || { brew install stow; }
-
-format:
-	stylua nvim/.config/nvim/**/*.lua --config-path nvim/.config/nvim/stylua.toml
-
-format-check:
-	stylua nvim/.config/nvim/**/*.lua --config-path nvim/.config/nvim/stylua.toml --check

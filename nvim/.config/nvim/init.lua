@@ -35,6 +35,27 @@ require('lazy').setup({
     'windwp/nvim-autopairs',
     'buztard/vim-rel-jump',
     'numToStr/Comment.nvim',
+    {
+        'folke/flash.nvim',
+        event = 'VeryLazy',
+        opts = {
+            modes = {
+                search = {
+                    enabled = false,
+                },
+            },
+        },
+        keys = {
+            {
+                's',
+                mode = { 'n', 'x', 'o' },
+                function()
+                    require('flash').jump()
+                end,
+                desc = 'Flash',
+            },
+        },
+    },
 
     -- git
     'tpope/vim-fugitive',
