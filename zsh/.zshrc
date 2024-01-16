@@ -62,7 +62,8 @@ fi
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$PATH
+export JAVA_HOME=/opt/homebrew/opt/openjdk
+export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH
 
 # https://github.com/microsoft/inshellisense
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh

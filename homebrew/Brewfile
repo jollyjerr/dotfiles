@@ -46,6 +46,8 @@ brew "stow"
 brew "stylua"
 brew "watchman"
 brew "webp"
+brew "openjdk"
+brew "maven"
 
 cask "1password"
 cask "1password-cli"
