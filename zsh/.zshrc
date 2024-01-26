@@ -38,8 +38,20 @@ function mkcdir() {
     mkdir -p -- "$1" &&
     cd -P -- "$1"
 }
+function fd() {
+    cd ~ &&
+    cd $(find ${1:-"code"} -path "*\.*" \
+        -prune -o -name node_modules \
+        -prune -o -name deps \
+        -prune -o -name build \
+        -prune -o -name _build \
+        -prune -o -name Pods \
+        -prune -o -type d \
+        -print \
+        | fzf
+    )
+}
 alias cpwd="pwd | pbcopy"
-alias fd="cd ~ && cd \$(find code -path \"*\/.*\" -prune -o -name node_modules -prune -o -type d -print | fzf)"
 alias vd="fd && vim ."
 
 alias vim="nvim"
