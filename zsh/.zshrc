@@ -22,13 +22,16 @@ alias gst="git status"
 alias gr="git remote -v"
 alias gcb="git checkout -b"
 alias gback="git checkout -"
-function pull () {
+function pull() {
     branch_name=${1:-"main"}
     git checkout $branch_name && git pull origin $branch_name && git remote update && git fetch
 }
-function gprunebranches () {
+function gprunebranches() {
     branch_name_to_keep=${1:-"main"}
     git for-each-ref --format '%(refname:short)' refs/heads | grep -v $branch_name_to_keep | xargs git branch -D
+}
+function gch() {
+ git checkout $(git branch -a | fzf)
 }
 
 alias dup="docker compose up -d"
@@ -46,6 +49,7 @@ function fd() {
         -prune -o -name build \
         -prune -o -name _build \
         -prune -o -name Pods \
+        -prune -o -name target \
         -prune -o -type d \
         -print \
         | fzf
