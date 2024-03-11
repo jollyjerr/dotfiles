@@ -82,11 +82,5 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
 
     -- ai dev tools
-    {
-        'jackMort/ChatGPT.nvim',
-        event = 'VeryLazy',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-        },
-    },
+    { 'jpmcb/nvim-llama', event = 'VeryLazy' },
 })
