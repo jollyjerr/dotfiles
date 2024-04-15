@@ -6,7 +6,7 @@ Always a WIP and changing every day :)
 
 ## Setup instructions
 
-This repo is targeted for MacOS. Many of the tools I use are cross platform and you should be able to get everything working on any OS, but you will be on your own 🫡.
+This repo is targeted for MacOS/Ubuntu. Many of the tools I use are cross platform and you should be able to get everything working on any OS, but you will be on your own 🫡.
 
 The basic idea is your configuration files all live in ~/.dotfiles and are symlinked to the appropriate config location for each application.
 
