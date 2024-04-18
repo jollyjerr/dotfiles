@@ -80,7 +80,4 @@ require('lazy').setup({
     'feline-nvim/feline.nvim',
     'nanozuki/tabby.nvim',
     'lukas-reineke/indent-blankline.nvim',
-
-    -- ai dev tools
-    { 'jpmcb/nvim-llama', event = 'VeryLazy' },
 })
