@@ -3,7 +3,7 @@ require('mason-lspconfig').setup({
     automatic_installation = true,
     ensure_installed = {
         'efm',
-        'ruby_ls',
+        'ruby_lsp',
         'clangd',
         'elixirls',
         'eslint',
