@@ -79,7 +79,7 @@ fi
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export JAVA_HOME=/opt/homebrew/opt/openjdk
-export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH
+export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
 
 # https://github.com/microsoft/inshellisense
 [ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh
