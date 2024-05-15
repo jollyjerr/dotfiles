@@ -1,6 +1,6 @@
 local defaults = require('jollyjerr.lsp')
 local lspconfig = require('lspconfig')
-local maps = require('jollyjerr.keymaps')
+local set = vim.keymap.set
 
 lspconfig.tsserver.setup({
     on_attach = function(client, bufnr)
@@ -14,7 +14,7 @@ lspconfig.tsserver.setup({
 
 lspconfig.eslint.setup({
     on_attach = function()
-        maps.nmap('<leader>EE', ':EslintFixAll<cr>')
+        set('n', '<leader>EE', ':EslintFixAll<cr>')
     end,
     capabilities = defaults.get_capabilities(),
 })
