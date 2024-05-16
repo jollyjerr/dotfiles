@@ -2,7 +2,9 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
-        return {
+        require('nvim-treesitter.configs').setup({
+            modules = {},
+            ignore_installed = {},
             ensure_installed = {
                 'lua',
                 'rust',
@@ -19,6 +21,6 @@ return {
                 enable = true,
                 disable = { 'diff' },
             },
-        }
+        })
     end,
 }

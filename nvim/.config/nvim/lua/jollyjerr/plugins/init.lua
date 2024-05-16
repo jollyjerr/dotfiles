@@ -13,9 +13,10 @@ return {
     'buztard/vim-rel-jump',
     {
         'numToStr/Comment.nvim',
-        config = {},
+        opts = {},
+        lazy = false
     },
     'lewis6991/gitsigns.nvim',
     'kyazdani42/nvim-web-devicons',
-    'lukas-reineke/indent-blankline.nvim',
+    { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 }
