@@ -33,6 +33,7 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 
 vim.opt.spelllang = { 'en_us' }
+vim.o.showtabline = 2
 
 vim.diagnostic.config({
     underline = true,
