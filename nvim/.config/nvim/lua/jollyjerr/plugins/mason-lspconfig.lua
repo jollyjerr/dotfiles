@@ -62,7 +62,7 @@ return {
             rootMarkers = { 'stylua.toml', '.stylua.toml' },
         }
 
-        local home = os.getenv("HOME")
+        local home = os.getenv('HOME')
 
         local servers = {
             clangd = {},
@@ -81,7 +81,7 @@ return {
                         fetchDeps = false,
                     },
                 },
-                cmd = { home .. "/.local/share/nvim/mason/bin/elixir-ls" }
+                cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
             },
             lua_ls = {
                 settings = {

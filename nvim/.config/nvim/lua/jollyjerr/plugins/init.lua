@@ -2,7 +2,7 @@ return {
     {
         'EdenEast/nightfox.nvim',
         lazy = false,
-        priority = 10,
+        priority = 1000,
         config = function()
             vim.cmd('colorscheme duskfox')
         end,
@@ -14,9 +14,8 @@ return {
     {
         'numToStr/Comment.nvim',
         opts = {},
-        lazy = false
+        lazy = false,
     },
     'lewis6991/gitsigns.nvim',
-    'kyazdani42/nvim-web-devicons',
     { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', opts = {} },
 }
