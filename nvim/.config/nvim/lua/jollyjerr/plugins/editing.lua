@@ -51,7 +51,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'buffer',  keyword_length = 5 },
+                    { name = 'buffer', keyword_length = 5 },
                     { name = 'luasnip' },
                     {
                         name = 'spell',
@@ -61,7 +61,7 @@ return {
                                 return cmp_context.in_treesitter_capture('spell')
                             end,
                         },
-                    }
+                    },
                 }, {
                     { name = 'buffer' },
                 }),
@@ -71,11 +71,11 @@ return {
                 },
             })
 
-            cmp.setup.filetype({ "sql" }, {
+            cmp.setup.filetype({ 'sql' }, {
                 sources = {
-                    { name = "vim-dadbod-completion" },
-                    { name = "buffer" }
-                }
+                    { name = 'vim-dadbod-completion' },
+                    { name = 'buffer' },
+                },
             })
         end,
     },

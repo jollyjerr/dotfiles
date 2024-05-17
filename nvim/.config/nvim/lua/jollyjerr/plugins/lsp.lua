@@ -172,9 +172,9 @@ return {
             lspconfig[key].setup(default_config)
         end
 
-        require("mason-lspconfig").setup({
+        require('mason-lspconfig').setup({
             automatic_installation = true,
-            ensure_installed = server_names
+            ensure_installed = server_names,
         })
     end,
 }
