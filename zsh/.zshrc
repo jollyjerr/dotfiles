@@ -12,6 +12,7 @@ export EDITOR=nvim
 export LANG="en_US.UTF-8"
 set -o vi
 
+alias rr="source ~/.zshrc"
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gpo="git push origin"
@@ -63,23 +64,30 @@ alias vi="nvim"
 alias ci="nvim" # I can't type lol
 
 alias top="htop"
-alias cat="bat"
 alias kittytheme="kitty +kitten themes --cache-age 0"
 
-if [[ $(uname -p) = "arm" ]]
-then
-    eval $(/opt/homebrew/bin/brew shellenv)
-    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
+if [[ `uname` == "Darwin" ]]; then
+  alias cat="bat"
+
+  eval $(/opt/homebrew/bin/brew shellenv)
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+  
+  export JAVA_HOME=/opt/homebrew/opt/openjdk
+  export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
+elif [[ `uname` == "Linux" ]]; then
+  . "$HOME/.asdf/asdf.sh"
+
+  # export JAVA_HOME=/opt/homebrew/opt/openjdk
+  # export JAVA_HOME=$HOME/.jdks/openjdk-21.0.2
+  export JAVA_HOME=$HOME/.jdks/corretto-17.0.10
+  export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:/home/jollyjerr/.asdf/installs/golang/1.21.6/packages/bin:$PATH
+  export FLYCTL_INSTALL="/home/jollyjerr/.fly"
+  export PATH="$FLYCTL_INSTALL/bin:$PATH"
 else
-    . /usr/local/opt/asdf/libexec/asdf.sh
+  echo 'ZSHRC: Unknown OS :( custom settings were skipped.'
 fi
 
 # .zshrc.local can be used for secrets or default overrides
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export JAVA_HOME=/opt/homebrew/opt/openjdk
-export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
-
-# https://github.com/microsoft/inshellisense
-[ -f ~/.inshellisense/key-bindings.zsh ] && source ~/.inshellisense/key-bindings.zsh

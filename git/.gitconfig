@@ -20,12 +20,12 @@
 [pull]
   rebase = false
 [credential]
-  helper = osxkeychain
+  helper = store
 [init]
   defaultBranch = main
 [difftool]
-    prompt = true
+  prompt = true
 [diff]
-    tool = nvimdiff
+  tool = nvimdiff
 [difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
