@@ -15,6 +15,7 @@ return {
         version = 'v2.*',
         build = 'make install_jsregexp',
     },
+    'f3fora/cmp-spell',
     {
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
