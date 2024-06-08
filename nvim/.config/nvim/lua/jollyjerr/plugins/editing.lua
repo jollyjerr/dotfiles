@@ -16,6 +16,9 @@ return {
         build = 'make install_jsregexp',
     },
     'f3fora/cmp-spell',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
     {
         'hrsh7th/nvim-cmp',
         event = 'InsertEnter',
@@ -52,7 +55,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'buffer', keyword_length = 5 },
+                    { name = 'buffer',  keyword_length = 5 },
                     { name = 'luasnip' },
                     {
                         name = 'spell',
