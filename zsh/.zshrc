@@ -2,7 +2,6 @@ plugins=(
     lol
     fzf
 )
-
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
 COMPLETION_WAITING_DOTS="true"
@@ -67,7 +66,14 @@ alias top="htop"
 alias kittytheme="kitty +kitten themes --cache-age 0"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
+if [ -f '/Users/jeremiah.tabb/Library/pnpm' ]; then
+    export PNPM_HOME="/Users/jeremiah.tabb/Library/pnpm"
+    export PATH="$PNPM_HOME:$PATH"
+fi
+if [ -f '/Users/jeremiah.tabb/code/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeremiah.tabb/code/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/jeremiah.tabb/code/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeremiah.tabb/code/google-cloud-sdk/completion.zsh.inc'; fi
 
+# OS specific config
 if [[ `uname` == "Darwin" ]]; then
   alias cat="bat"
 
@@ -86,7 +92,7 @@ elif [[ `uname` == "Linux" ]]; then
   export FLYCTL_INSTALL="/home/jollyjerr/.fly"
   export PATH="$FLYCTL_INSTALL/bin:$PATH"
 else
-  echo 'ZSHRC: Unknown OS :( custom settings were skipped.'
+  echo '.zshrc: Unknown OS :( custom settings were skipped.'
 fi
 
 # .zshrc.local can be used for secrets or default overrides
