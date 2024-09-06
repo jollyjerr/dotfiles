@@ -113,7 +113,8 @@ return {
                     },
                 },
             },
-            tsserver = {
+            ts_ls = {
+                mason_name = 'tsserver',
                 on_attach = function(client, bufnr)
                     client.server_capabilities.documentFormattingProvider = false
 
@@ -158,7 +159,8 @@ return {
 
         local server_names = {}
         for key, custom_config in pairs(servers) do
-            table.insert(server_names, key)
+            local name = custom_config['mason_name'] == nil and key or custom_config['mason_name']
+            table.insert(server_names, name)
 
             local default_config = {
                 on_attach = on_attach,
