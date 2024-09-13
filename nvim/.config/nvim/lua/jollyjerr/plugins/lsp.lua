@@ -114,7 +114,7 @@ return {
                 },
             },
             ts_ls = {
-                mason_name = 'tsserver',
+                -- mason_name = 'tsserver',
                 on_attach = function(client, bufnr)
                     client.server_capabilities.documentFormattingProvider = false
 

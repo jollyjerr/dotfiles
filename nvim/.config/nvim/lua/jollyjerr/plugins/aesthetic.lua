@@ -111,4 +111,43 @@ return {
             require('gitsigns').setup()
         end,
     },
+    {
+        'folke/zen-mode.nvim',
+        opts = {
+            window = {
+                options = {
+                    number = false,
+                    relativenumber = false, -- disable relative numbers
+                    cursorline = false, -- disable cursorline
+                    cursorcolumn = false, -- disable cursor column
+                },
+            },
+            plugins = {
+                kitty = {
+                    enabled = true,
+                    font = '+8',
+                },
+            },
+            on_open = function()
+                vim.opt.colorcolumn = '0'
+                vim.opt.signcolumn = 'no'
+                vim.opt.laststatus = 0
+
+                vim.keymap.set('n', '<Right>', '<cmd>bnext<cr>')
+                vim.keymap.set('n', '<Left>', '<cmd>bprevious<cr>')
+
+                require('ibl').update({ enabled = false })
+            end,
+            on_close = function()
+                vim.opt.colorcolumn = '100'
+                vim.opt.signcolumn = 'yes'
+                vim.opt.laststatus = 2
+
+                vim.keymap.del('n', '<Right>')
+                vim.keymap.del('n', '<Left>')
+
+                require('ibl').update({ enabled = true })
+            end,
+        },
+    },
 }
