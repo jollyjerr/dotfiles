@@ -12,6 +12,7 @@ export LANG="en_US.UTF-8"
 set -o vi
 
 alias rr="source ~/.zshrc"
+
 alias gaa="git add ."
 alias gcm="git commit -m"
 alias gpo="git push origin"
@@ -61,9 +62,11 @@ alias vd="fd && vim ."
 alias vim="nvim"
 alias vi="nvim"
 alias ci="nvim" # I can't type lol
-
 alias top="htop"
-alias kittytheme="kitty +kitten themes --cache-age 0"
+
+alias tat="tmux attach -t"
+alias tls="tmux ls"
+alias tns="tmux new-session -t"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 if [ -f '/Users/jeremiah.tabb/Library/pnpm' ]; then
@@ -91,8 +94,6 @@ elif [[ `uname` == "Linux" ]]; then
   export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:/home/jollyjerr/.asdf/installs/golang/1.21.6/packages/bin:$PATH
   export FLYCTL_INSTALL="/home/jollyjerr/.fly"
   export PATH="$FLYCTL_INSTALL/bin:$PATH"
-else
-  echo '.zshrc: Unknown OS :( custom settings were skipped.'
 fi
 
 # .zshrc.local can be used for secrets or default overrides
