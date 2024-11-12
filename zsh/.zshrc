@@ -79,12 +79,15 @@ if [ -f '/Users/jeremiah.tabb/code/google-cloud-sdk/completion.zsh.inc' ]; then 
 # OS specific config
 if [[ `uname` == "Darwin" ]]; then
   alias cat="bat"
-
-  eval $(/opt/homebrew/bin/brew shellenv)
-  . /opt/homebrew/opt/asdf/libexec/asdf.sh
-  
-  export JAVA_HOME=/opt/homebrew/opt/openjdk
-  export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
+  if [[ `uname -p` == "arm" ]]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+    . /opt/homebrew/opt/asdf/libexec/asdf.sh
+    
+    export JAVA_HOME=/opt/homebrew/opt/openjdk
+    export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
+  else
+    . /usr/local/opt/asdf/libexec/asdf.sh
+  fi
 elif [[ `uname` == "Linux" ]]; then
   . "$HOME/.asdf/asdf.sh"
 
