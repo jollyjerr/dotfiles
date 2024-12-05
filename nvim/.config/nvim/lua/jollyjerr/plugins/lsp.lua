@@ -121,6 +121,7 @@ return {
                     local options = get_buffer_options(bufnr)
                     add_read_only_maps(options)
                 end,
+                single_file_support = true,
             },
             eslint = {
                 on_attach = function()
