@@ -120,8 +120,12 @@ return {
 
                     local options = get_buffer_options(bufnr)
                     add_read_only_maps(options)
-                end,
-                single_file_support = true,
+                end
+            },
+            denols = {
+                filetypes = {
+                    'javascript'
+                }
             },
             eslint = {
                 on_attach = function()
