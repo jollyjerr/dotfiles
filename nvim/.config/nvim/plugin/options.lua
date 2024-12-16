@@ -44,6 +44,6 @@ vim.diagnostic.config({
     float = {
         severity_sort = true,
         max_width = 120,
-        source = 'always'
+        source = 'always',
     },
 })
