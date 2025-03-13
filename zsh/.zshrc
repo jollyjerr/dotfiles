@@ -1,6 +1,7 @@
 plugins=(
     lol
     fzf
+    zsh-autosuggestions
 )
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
@@ -69,6 +70,9 @@ alias tls="tmux ls"
 alias tns="tmux new-session -t"
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+
 if [ -f '/Users/jeremiah.tabb/Library/pnpm' ]; then
     export PNPM_HOME="/Users/jeremiah.tabb/Library/pnpm"
     export PATH="$PNPM_HOME:$PATH"
@@ -81,23 +85,16 @@ if [[ `uname` == "Darwin" ]]; then
   alias cat="bat"
   if [[ `uname -p` == "arm" ]]; then
     eval $(/opt/homebrew/bin/brew shellenv)
-    . /opt/homebrew/opt/asdf/libexec/asdf.sh
-    
-    export JAVA_HOME=/opt/homebrew/opt/openjdk
-    export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:$PATH:$HOME/bin
-  else
-    . /usr/local/opt/asdf/libexec/asdf.sh
   fi
 elif [[ `uname` == "Linux" ]]; then
-  . "$HOME/.asdf/asdf.sh"
 
   # export JAVA_HOME=/opt/homebrew/opt/openjdk
   # export JAVA_HOME=$HOME/.jdks/openjdk-21.0.2
   export JAVA_HOME=$HOME/.jdks/corretto-17.0.10
-  export PATH=$HOME/libraries/depot_tools:$ANDROID_HOME/platform-tools:$JAVA_HOME/bin:/home/jollyjerr/.asdf/installs/golang/1.21.6/packages/bin:$PATH
   export FLYCTL_INSTALL="/home/jollyjerr/.fly"
   export PATH="$FLYCTL_INSTALL/bin:$PATH"
 fi
 
 # .zshrc.local can be used for secrets or default overrides
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+eval "$(/Users/jeremiah.tabb/.local/bin/mise activate zsh)"

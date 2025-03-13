@@ -68,7 +68,7 @@ return {
             clangd = {},
             gopls = {},
             html = {},
-            htmx = {},
+            -- htmx = {},
             jdtls = {},
             kotlin_language_server = {},
             ruby_lsp = {},
@@ -125,6 +125,7 @@ return {
             denols = {
                 filetypes = {
                     'javascript',
+                    -- 'typescript'
                 },
             },
             eslint = {
