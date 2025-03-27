@@ -34,6 +34,7 @@ vim.g.loaded_node_provider = 0
 
 vim.opt.spelllang = { 'en_us' }
 vim.o.showtabline = 2
+vim.o.cursorline = true
 
 vim.diagnostic.config({
     underline = true,
