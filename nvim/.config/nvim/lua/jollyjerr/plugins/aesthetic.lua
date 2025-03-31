@@ -12,6 +12,10 @@ return {
         event = 'VimEnter',
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
+            if vim.g.vscode then
+                return
+            end
+
             local theme = {
                 fill = 'TabLineFill',
                 head = 'TabLine',
