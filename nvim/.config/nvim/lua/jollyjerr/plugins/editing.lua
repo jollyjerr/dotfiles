@@ -1,9 +1,3 @@
--- pipe hidden buffer into llm
-vim.keymap.set('n', '<leader>ll', function()
-    local command = ":! " .. vim.inspect(vim.fn.getreg('"')) .. " | llm '"
-    vim.api.nvim_feedkeys(command, 'n', true)
-end, { desc = "Insert :! <C-r>\" | llm '" })
-
 return {
     'tpope/vim-surround',
     {
@@ -61,7 +55,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'buffer', keyword_length = 5 },
+                    { name = 'buffer',  keyword_length = 5 },
                     { name = 'luasnip' },
                     {
                         name = 'spell',

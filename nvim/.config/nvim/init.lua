@@ -19,3 +19,5 @@ require('lazy').setup({ import = 'jollyjerr/plugins' }, {
         notify = false,
     },
 })
+
+require('jollyjerr.llm')
