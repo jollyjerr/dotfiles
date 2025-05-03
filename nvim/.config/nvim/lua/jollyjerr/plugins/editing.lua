@@ -1,3 +1,9 @@
+-- pipe hidden buffer into llm
+vim.keymap.set('n', '<leader>ll', function()
+    local command = ":! " .. vim.inspect(vim.fn.getreg('"')) .. " | llm '"
+    vim.api.nvim_feedkeys(command, 'n', true)
+end, { desc = "Insert :! <C-r>\" | llm '" })
+
 return {
     'tpope/vim-surround',
     {
