@@ -27,7 +27,7 @@ end
 
 local keymap = vim.keymap.set
 
-keymap('n', '<leader>llb', M.llm_chat_with_buffer_context, { noremap = true, silent = true })
-keymap('n', '<leader>lly', M.llm_chat_with_yank_context, { noremap = true, silent = true })
+keymap('n', '<leader>mlb', M.llm_chat_with_buffer_context, { noremap = true, silent = true })
+keymap('n', '<leader>mly', M.llm_chat_with_yank_context, { noremap = true, silent = true })
 
 return M
