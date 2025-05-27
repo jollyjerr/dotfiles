@@ -2,30 +2,45 @@
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   editor = nvim
   excludesfile = ~/.gitignore
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  dark = true
+  side-by-side = true
+
+[merge]
+  conflictstyle = zdiff3
+
 [github]
   user = Jeremiah Tabb
   email = jollyjerr@gmail.com
+
 [user]
   name = Jeremiah Tabb
   email = jollyjerr@gmail.com
+
 [color]
   ui = true
   diff = auto
   status = auto
   branch = auto
+
 [format]
   pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
+
 [push]
   default = current
+
 [pull]
   rebase = false
+
 [credential]
   helper = store
+
 [init]
   defaultBranch = main
-[difftool]
-  prompt = true
-[diff]
-  tool = nvimdiff
-[difftool "nvimdiff"]
-  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+

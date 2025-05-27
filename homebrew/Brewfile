@@ -20,6 +20,7 @@ brew "stylua"
 brew "watchman"
 brew "webp"
 brew "maven"
+brew "git-delta"
 
 cask "android-studio"
 cask "arc"
