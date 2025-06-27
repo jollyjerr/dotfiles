@@ -1,0 +1,4 @@
+# https://aider.chat/docs/config.html
+model: gpt-4o
+git: true
+auto-commit: true
