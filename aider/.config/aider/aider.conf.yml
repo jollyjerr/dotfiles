@@ -1,4 +1,4 @@
 # https://aider.chat/docs/config.html
-model: gpt-4o
-git: true
-auto-commit: true
+model: gemini
+auto-commits: false
+dark-mode: true
