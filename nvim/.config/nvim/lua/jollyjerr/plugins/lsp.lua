@@ -1,4 +1,5 @@
 local set = vim.keymap.set
+local lsp_handlers = vim.lsp.handlers
 
 local function add_read_only_maps(bufopts)
     set('n', '<leader>rr', '<cmd>LspRestart<cr>')
@@ -64,6 +65,21 @@ return {
 
         local home = os.getenv('HOME')
 
+
+        local original_showMessage_handler = lsp_handlers["window/showMessage"]
+        lsp_handlers["window/showMessage"] = function(err, result, ctx, config)
+            local message = result and result.message
+
+            -- todo: needed for a specific project, it's a long story :/
+            if message and message:find("Quokka is not loaded") then
+                return
+            end
+
+            if original_showMessage_handler then
+                original_showMessage_handler(err, result, ctx, config)
+            end
+        end
+
         local servers = {
             clangd = {},
             gopls = {},
@@ -82,6 +98,7 @@ return {
                     },
                 },
                 cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
+                handlers = lsp_handlers
             },
             lua_ls = {
                 settings = {
