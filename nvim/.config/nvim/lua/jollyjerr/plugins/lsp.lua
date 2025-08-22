@@ -70,9 +70,18 @@ return {
         lsp_handlers["window/showMessage"] = function(err, result, ctx, config)
             local message = result and result.message
 
-            -- todo: needed for a specific project, it's a long story :/
-            if message and message:find("Quokka is not loaded") then
-                return
+            -- Temporary workaround for elixirls annoyance
+            local ignore_phrases = {
+                "Quokka is not loaded",
+                "OTP compiled without"
+            }
+
+            if message then
+                for _, phrase in ipairs(ignore_phrases) do
+                    if message:find(phrase) then
+                        return
+                    end
+                end
             end
 
             if original_showMessage_handler then
