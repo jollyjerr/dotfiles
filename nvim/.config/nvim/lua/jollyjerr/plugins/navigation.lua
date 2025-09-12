@@ -23,6 +23,15 @@ return {
         },
     },
     {
+        'stevearc/aerial.nvim',
+        opts = {},
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = true,
+    },
+    {
         'nvim-telescope/telescope.nvim',
         dependencies = {
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },

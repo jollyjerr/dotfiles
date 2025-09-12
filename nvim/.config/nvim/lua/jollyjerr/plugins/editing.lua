@@ -27,6 +27,7 @@ return {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
             'f3fora/cmp-spell',
+            'onsails/lspkind.nvim',
         },
         config = function()
             local cmp = require('cmp')
@@ -55,7 +56,7 @@ return {
                 }),
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'buffer',  keyword_length = 5 },
+                    { name = 'buffer', keyword_length = 5 },
                     { name = 'luasnip' },
                     {
                         name = 'spell',
@@ -72,6 +73,19 @@ return {
                 experimental = {
                     native_menu = false,
                     ghost_text = { hl_group = 'CmpGhostText' },
+                },
+                formatting = {
+                    format = function(entry, vim_item)
+                        if vim.tbl_contains({ 'path' }, entry.source.name) then
+                            local icon, hl_group = require('nvim-web-devicons').get_icon(entry:completion_item().label)
+                            if icon then
+                                vim_item.kind = icon
+                                vim_item.kind_hl_group = hl_group
+                                return vim_item
+                            end
+                        end
+                        return require('lspkind').cmp_format({ with_text = false })(entry, vim_item)
+                    end,
                 },
             })
 
@@ -105,6 +119,23 @@ return {
             nmap y <plug>(YoinkYankPreserveCursorPosition)
             xmap y <plug>(YoinkYankPreserveCursorPosition)
         ]])
+        end,
+    },
+    {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        config = function()
+            return {
+                textobjects = {
+                    select = {
+                        enable = true,
+                        lookahead = true,
+                        keymaps = {
+                            ['af'] = '@function.outer',
+                            ['if'] = '@function.inner',
+                        },
+                    },
+                },
+            }
         end,
     },
 }

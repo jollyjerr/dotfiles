@@ -65,15 +65,14 @@ return {
 
         local home = os.getenv('HOME')
 
-
-        local original_showMessage_handler = lsp_handlers["window/showMessage"]
-        lsp_handlers["window/showMessage"] = function(err, result, ctx, config)
+        local original_showMessage_handler = lsp_handlers['window/showMessage']
+        lsp_handlers['window/showMessage'] = function(err, result, ctx, config)
             local message = result and result.message
 
             -- Temporary workaround for elixirls annoyance
             local ignore_phrases = {
-                "Quokka is not loaded",
-                "OTP compiled without"
+                'Quokka is not loaded',
+                'OTP compiled without',
             }
 
             if message then
@@ -107,8 +106,17 @@ return {
                     },
                 },
                 cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
-                handlers = lsp_handlers
+                handlers = lsp_handlers,
             },
+            -- lexical = {
+            --     cmd = { home .. "code/@opensource/expert/burrito_out/expert_linux_amd64" },
+            --     root_dir = function(fname)
+            --         return util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+            --     end,
+            --     filetypes = { "elixir", "eelixir", "heex" },
+            --     -- optional settings
+            --     settings = {}
+            -- },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -206,10 +214,20 @@ return {
             lspconfig[key].setup(default_config)
         end
 
+        -- lspconfig.lexical.setup({
+        --         cmd = { '/Users/jeremiah.tabb/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64' },
+        --         root_dir = function(fname)
+        --             return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+        --         end,
+        --         filetypes = { "elixir", "eelixir", "heex" },
+        --         -- optional settings
+        --         settings = {}
+        --     })
+
         require('mason-lspconfig').setup({
             automatic_installation = true,
             ensure_installed = server_names,
-            automatic_enable = false
+            automatic_enable = false,
         })
     end,
 }

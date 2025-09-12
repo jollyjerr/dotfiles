@@ -154,4 +154,16 @@ return {
             end,
         },
     },
+    { -- View marks in gutter
+        'chentoast/marks.nvim',
+        event = 'VeryLazy',
+        opts = {},
+        config = function()
+            require('marks').setup()
+        end,
+    },
+    {
+        'sphamba/smear-cursor.nvim',
+        config = true,
+    },
 }

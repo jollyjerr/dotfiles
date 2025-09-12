@@ -46,5 +46,6 @@ vim.diagnostic.config({
         severity_sort = true,
         max_width = 120,
         source = 'always',
+        border = 'rounded',
     },
 })
