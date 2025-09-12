@@ -98,25 +98,26 @@ return {
             ruby_lsp = {},
             rust_analyzer = {},
             svelte = {},
-            elixirls = {
-                settings = {
-                    elixirLS = {
-                        dialyzerEnabled = false,
-                        fetchDeps = false,
-                    },
-                },
-                cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
-                handlers = lsp_handlers,
-            },
-            -- lexical = {
-            --     cmd = { home .. "code/@opensource/expert/burrito_out/expert_linux_amd64" },
-            --     root_dir = function(fname)
-            --         return util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
-            --     end,
-            --     filetypes = { "elixir", "eelixir", "heex" },
-            --     -- optional settings
-            --     settings = {}
+            -- elixirls = {
+            --     settings = {
+            --         elixirLS = {
+            --             dialyzerEnabled = false,
+            --             fetchDeps = false,
+            --         },
+            --     },
+            --     cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
+            --     handlers = lsp_handlers,
             -- },
+            lexical = {
+                -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
+                cmd = { home .. "/code/@opensource/expert/apps/expert/expert_prebuilt" },
+                root_dir = function(fname)
+                    return require('lspconfig').util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+                end,
+                filetypes = { "elixir", "eelixir", "heex" },
+                -- optional settings
+                settings = {}
+            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -213,16 +214,6 @@ return {
 
             lspconfig[key].setup(default_config)
         end
-
-        -- lspconfig.lexical.setup({
-        --         cmd = { '/Users/jeremiah.tabb/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64' },
-        --         root_dir = function(fname)
-        --             return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
-        --         end,
-        --         filetypes = { "elixir", "eelixir", "heex" },
-        --         -- optional settings
-        --         settings = {}
-        --     })
 
         require('mason-lspconfig').setup({
             automatic_installation = true,
