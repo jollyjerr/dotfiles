@@ -29,7 +29,10 @@ return {
             'nvim-treesitter/nvim-treesitter',
             'nvim-tree/nvim-web-devicons',
         },
-        config = true,
+        config = function()
+            vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+            require('aerial').setup({})
+        end,
     },
     {
         'nvim-telescope/telescope.nvim',

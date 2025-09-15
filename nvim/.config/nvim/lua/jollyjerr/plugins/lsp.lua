@@ -110,13 +110,13 @@ return {
             -- },
             lexical = {
                 -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
-                cmd = { home .. "/code/@opensource/expert/apps/expert/expert_prebuilt" },
+                cmd = { home .. '/code/@opensource/expert/apps/expert/expert_prebuilt' },
                 root_dir = function(fname)
-                    return require('lspconfig').util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
+                    return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.cwd()
                 end,
-                filetypes = { "elixir", "eelixir", "heex" },
+                filetypes = { 'elixir', 'eelixir', 'heex' },
                 -- optional settings
-                settings = {}
+                settings = {},
             },
             lua_ls = {
                 settings = {
