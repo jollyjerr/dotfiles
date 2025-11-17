@@ -2,7 +2,7 @@ local set = vim.keymap.set
 local lsp_handlers = vim.lsp.handlers
 
 local function add_read_only_maps(bufopts)
-    set('n', '<leader>rr', '<cmd>LspRestart<cr>')
+    set('n', '<leader>rr', '<cmd>LspRestart<cr>', bufopts)
 
     set('n', 'K', vim.lsp.buf.hover, bufopts)
 
@@ -19,7 +19,9 @@ local function add_read_only_maps(bufopts)
 end
 
 local function add_formatting(bufopts)
-    set('n', '<leader>F', vim.lsp.buf.format, bufopts)
+    set('n', '<leader>F', function()
+        vim.lsp.buf.format({ async = true })
+    end, bufopts)
 end
 
 local function get_buffer_options(buffer_number)
@@ -45,11 +47,11 @@ return {
         require('mason').setup()
         require('neodev').setup()
 
-        local lspconfig = require('lspconfig')
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
+        local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
         local function get_capabilities()
-            cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            return capabilities
         end
 
         local prettier = {
@@ -95,36 +97,34 @@ return {
             -- htmx = {},
             jdtls = {},
             kotlin_language_server = {},
-            ruby_lsp = {},
+            -- ruby_lsp = {},
             rust_analyzer = {},
             svelte = {},
-            -- elixirls = {
-            --     settings = {
-            --         elixirLS = {
-            --             dialyzerEnabled = false,
-            --             fetchDeps = false,
-            --         },
-            --     },
-            --     cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
-            --     handlers = lsp_handlers,
-            -- },
-            lexical = {
-                -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
-                cmd = { home .. '/code/@opensource/expert/expert_darwin_arm64' },
-                root_dir = function(fname)
-                    return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.cwd()
-                end,
-                filetypes = { 'elixir', 'eelixir', 'heex' },
-                -- optional settings
-                settings = {},
+            elixirls = {
+                settings = {
+                    elixirLS = {
+                        dialyzerEnabled = false,
+                        fetchDeps = false,
+                    },
+                },
+                cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
+                handlers = lsp_handlers,
             },
+            -- lexical = {
+            --     -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
+            --     cmd = { home .. "/code/@opensource/expert/apps/expert/expert_prebuilt" },
+            --     root_dir = function(fname)
+            --         return require('lspconfig.util').root_pattern("mix.exs", ".git")(fname)
+            --             or vim.loop.cwd()
+            --     end,
+            --     filetypes = { "elixir", "eelixir", "heex" },
+            --     settings = {}
+            -- },
             lua_ls = {
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = {
-                                'vim',
-                            },
+                            globals = { 'vim' },
                         },
                     },
                 },
@@ -164,7 +164,7 @@ return {
                 },
             },
             eslint = {
-                on_attach = function()
+                on_attach = function(_, _)
                     set('n', '<leader>EE', ':EslintFixAll<cr>')
                 end,
             },
@@ -200,19 +200,22 @@ return {
 
         local server_names = {}
         for key, custom_config in pairs(servers) do
-            local name = custom_config['mason_name'] == nil and key or custom_config['mason_name']
+            local name = custom_config.mason_name or key
             table.insert(server_names, name)
+        end
 
-            local default_config = {
+        for key, custom_config in pairs(servers) do
+            local final_config = {
                 on_attach = on_attach,
                 capabilities = get_capabilities(),
             }
 
-            for a, b in pairs(custom_config) do
-                default_config[a] = b
+            for k, v in pairs(custom_config) do
+                final_config[k] = v
             end
 
-            lspconfig[key].setup(default_config)
+            vim.lsp.config(key, final_config)
+            vim.lsp.enable(key)
         end
 
         require('mason-lspconfig').setup({
