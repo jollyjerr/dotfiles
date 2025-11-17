@@ -162,8 +162,8 @@ return {
             require('marks').setup()
         end,
     },
-    {
-        'sphamba/smear-cursor.nvim',
-        config = true,
-    },
+    -- {
+    --     'sphamba/smear-cursor.nvim',
+    --     config = true,
+    -- },
 }

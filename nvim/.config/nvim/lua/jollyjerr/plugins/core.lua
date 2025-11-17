@@ -23,6 +23,9 @@ return {
                     enable = true,
                     disable = { 'diff' },
                 },
+                injections = {
+                    enable = true,
+                },
             })
         end,
     },

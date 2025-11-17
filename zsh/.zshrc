@@ -13,6 +13,7 @@ export LANG="en_US.UTF-8"
 set -o vi
 
 alias rr="source ~/.zshrc"
+alias vibe="aider --config ~/.config/aider/aider.conf.yml"
 
 alias gaa="git add ."
 alias gcm="git commit -m"

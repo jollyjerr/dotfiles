@@ -110,7 +110,7 @@ return {
             -- },
             lexical = {
                 -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
-                cmd = { home .. '/code/@opensource/expert/apps/expert/expert_prebuilt' },
+                cmd = { home .. '/code/@opensource/expert/expert_darwin_arm64' },
                 root_dir = function(fname)
                     return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.cwd()
                 end,
