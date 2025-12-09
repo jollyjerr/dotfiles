@@ -111,14 +111,12 @@ return {
                 handlers = lsp_handlers,
             },
             -- lexical = {
-            --     -- cmd = { home .. "/code/@opensource/expert/apps/expert/burrito_out/expert_darwin_arm64" },
-            --     cmd = { home .. "/code/@opensource/expert/apps/expert/expert_prebuilt" },
-            --     root_dir = function(fname)
-            --         return require('lspconfig.util').root_pattern("mix.exs", ".git")(fname)
-            --             or vim.loop.cwd()
-            --     end,
-            --     filetypes = { "elixir", "eelixir", "heex" },
-            --     settings = {}
+            --     cmd = { home .. '/code/@opensource/expert/expert_darwin_arm64', '--stdio' },
+            --     -- root_dir = function(fname)
+            --     --     return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.cwd()
+            --     -- end,
+            --     root_markers = { 'mix.exs', '.git' },
+            --     filetypes = { 'elixir', 'eelixir', 'heex' },
             -- },
             lua_ls = {
                 settings = {

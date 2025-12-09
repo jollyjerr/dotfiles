@@ -1,0 +1,8 @@
+# https://aider.chat/docs/config.html
+model: gemini
+auto-commits: false
+dark-mode: true
+completion-menu-color: "#f2f4f8"
+completion-menu-bg-color: "#161616"
+completion-menu-current-color: "#f2f4f8"
+completion-menu-current-bg-color: "#3ddbd9"

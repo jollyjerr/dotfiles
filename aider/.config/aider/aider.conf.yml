@@ -1,4 +1,0 @@
-# https://aider.chat/docs/config.html
-model: gemini
-auto-commits: false
-dark-mode: true

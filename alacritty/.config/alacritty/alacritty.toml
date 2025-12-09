@@ -1,5 +1,5 @@
 [general]
-import = [ "./duskfox.toml" ]
+import = [ "./carbonfox.toml" ]
 
 [window]
 decorations = "None"
