@@ -1,6 +1,8 @@
-nodejs 22.14.0
-pnpm 7.5.2 
+nodejs 22.15.1
+pnpm 10.11.0
 python 3.13
-erlang 27.3
-elixir 1.18.3-otp-27
+erlang 28.1.1
+elixir 1.19.3-otp-28
 golang 1.20
+java openjdk-23.0.1
+opentofu 1.11.2

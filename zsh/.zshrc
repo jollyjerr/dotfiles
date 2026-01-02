@@ -98,4 +98,4 @@ fi
 
 # .zshrc.local can be used for secrets or default overrides
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-eval "$(/Users/jeremiah.tabb/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"

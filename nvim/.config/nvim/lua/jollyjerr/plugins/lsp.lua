@@ -166,6 +166,9 @@ return {
                     set('n', '<leader>EE', ':EslintFixAll<cr>')
                 end,
             },
+            cssls = {
+
+            },
             efm = {
                 filetypes = {
                     'typescript',
