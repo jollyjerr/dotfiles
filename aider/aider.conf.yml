@@ -2,7 +2,7 @@
 model: gemini
 auto-commits: false
 dark-mode: true
-completion-menu-color: "#f2f4f8"
-completion-menu-bg-color: "#161616"
-completion-menu-current-color: "#f2f4f8"
-completion-menu-current-bg-color: "#3ddbd9"
+completion-menu-color: "#cdcecf"
+completion-menu-bg-color: "#192330"
+completion-menu-current-color: "#cdcecf"
+completion-menu-current-bg-color: "#192330"
