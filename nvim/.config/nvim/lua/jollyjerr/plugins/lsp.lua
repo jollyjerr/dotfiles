@@ -100,24 +100,24 @@ return {
             -- ruby_lsp = {},
             rust_analyzer = {},
             svelte = {},
-            elixirls = {
-                settings = {
-                    elixirLS = {
-                        dialyzerEnabled = false,
-                        fetchDeps = false,
-                    },
-                },
-                cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
-                handlers = lsp_handlers,
-            },
-            -- lexical = {
-            --     cmd = { home .. '/code/@opensource/expert/expert_darwin_arm64', '--stdio' },
-            --     -- root_dir = function(fname)
-            --     --     return require('lspconfig').util.root_pattern('mix.exs', '.git')(fname) or vim.loop.cwd()
-            --     -- end,
-            --     root_markers = { 'mix.exs', '.git' },
-            --     filetypes = { 'elixir', 'eelixir', 'heex' },
+            -- elixirls = {
+            --     settings = {
+            --         elixirLS = {
+            --             dialyzerEnabled = false,
+            --             fetchDeps = false,
+            --         },
+            --     },
+            --     cmd = { home .. '/.local/share/nvim/mason/bin/elixir-ls' },
+            --     handlers = lsp_handlers,
             -- },
+            expert = {
+                cmd = {
+                    home .. '/code/@opensource/expert/apps/expert/_build/prod/rel/plain/bin/start_expert',
+                    '--stdio',
+                },
+                root_markers = { 'mix.exs', '.git' },
+                filetypes = { 'elixir', 'eelixir', 'heex' },
+            },
             lua_ls = {
                 settings = {
                     Lua = {
@@ -166,9 +166,7 @@ return {
                     set('n', '<leader>EE', ':EslintFixAll<cr>')
                 end,
             },
-            cssls = {
-
-            },
+            cssls = {},
             efm = {
                 filetypes = {
                     'typescript',
