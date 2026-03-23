@@ -6,3 +6,5 @@ elixir 1.19.3-otp-28
 golang 1.20
 java openjdk-23.0.1
 opentofu 1.11.2
+lua 5.1
+julia 1.10
