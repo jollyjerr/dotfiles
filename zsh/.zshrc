@@ -6,6 +6,8 @@ plugins=(
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="gnzh"
 COMPLETION_WAITING_DOTS="true"
+ZSH_DISABLE_COMPFIX=true
+DISABLE_AUTO_UPDATE=true
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
@@ -99,3 +101,4 @@ fi
 # .zshrc.local can be used for secrets or default overrides
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 eval "$(mise activate zsh)"
+export PATH="$HOME/.local/bin:$PATH"
