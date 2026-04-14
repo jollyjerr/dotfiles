@@ -31,6 +31,11 @@ end
 local function on_attach(_, buffer_number)
     local options = get_buffer_options(buffer_number)
 
+    -- Remove all 0.12 default gr* keymaps
+    for _, key in ipairs({ 'grr', 'grn', 'gra', 'gri' }) do
+        pcall(vim.keymap.del, 'n', key, { buffer = buffer_number })
+    end
+
     add_read_only_maps(options)
     add_formatting(options)
 end
@@ -39,13 +44,13 @@ return {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
         'williamboman/mason.nvim',
-        'folke/neodev.nvim',
+        'folke/lazydev.nvim',
         'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
         require('mason').setup()
-        require('neodev').setup()
+        require('lazydev').setup()
 
         local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -191,7 +196,7 @@ return {
                         svelte = { prettier },
                         vue = { prettier },
                         markdown = { prettier },
-                        html = { stylua },
+                        html = { prettier },
                     },
                 },
             },

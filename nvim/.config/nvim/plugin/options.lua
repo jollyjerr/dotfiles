@@ -11,12 +11,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.w.nohlsearch = true
 vim.opt.incsearch = true
-vim.opt.hidden = true
 
 vim.opt.termguicolors = true
-vim.opt.syntax = 'on'
 vim.opt.laststatus = 3
 vim.opt.emoji = false
 vim.opt.colorcolumn = '100'

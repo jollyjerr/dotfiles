@@ -1,11 +1,6 @@
 return {
     'tpope/vim-surround',
     {
-        'numToStr/Comment.nvim',
-        opts = {},
-        lazy = false,
-    },
-    {
         'windwp/nvim-autopairs',
         event = 'InsertEnter',
         config = true,
@@ -123,19 +118,5 @@ return {
     },
     {
         'nvim-treesitter/nvim-treesitter-textobjects',
-        config = function()
-            return {
-                textobjects = {
-                    select = {
-                        enable = true,
-                        lookahead = true,
-                        keymaps = {
-                            ['af'] = '@function.outer',
-                            ['if'] = '@function.inner',
-                        },
-                    },
-                },
-            }
-        end,
     },
 }
