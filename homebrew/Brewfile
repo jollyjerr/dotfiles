@@ -1,36 +1,204 @@
+tap "getsentry/tools"
 tap "homebrew/bundle"
-
-brew "coreutils"
-brew "asdf"
+tap "opencode-ai/tap"
+tap "osx-cross/arm"
+tap "osx-cross/avr"
+tap "qmk/qmk"
+tap "sst/tap"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# GNU compiler collection
+brew "gcc"
+# AI pair programming in your terminal
+brew "aider"
+# GNU internationalization (i18n) and localization (l10n) library
+brew "gettext"
+# Core application library for C
+brew "glib"
+# Protocol definitions and daemon for D-Bus at-spi
+brew "at-spi2-core"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
+# Google's own build tool
+brew "bazel"
+# Command-line automation tool
+brew "bitrise"
+# Powerful command-line bookmark manager
+brew "buku"
+# Vector graphics library with cross-device output support
+brew "cairomm"
+# CloudFlare's PKI toolkit
+brew "cfssl"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# Cross-platform make
 brew "cmake"
+# Dependency manager for Cocoa projects
 brew "cocoapods"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Bash, Zsh and Fish completion for Docker
+brew "docker-completion"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line tools for fly.io services
+brew "flyctl"
+# Configurable embedded Linux firmware update creator and runner
+brew "fwup"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# GitHub command-line tool
 brew "gh"
-brew "htop"
-brew "jpeg"
-brew "jq"
-brew "openjdk"
-brew "pgcli"
-brew "redis"
-brew "ripgrep"
-brew "speedtest-cli"
-brew "stow"
-brew "stylua"
-brew "watchman"
-brew "webp"
-brew "maven"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
-
+# Git extension for versioning large files
+brew "git-lfs"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# GUI toolkit
+brew "gtk+"
+# Toolkit for creating graphical user interfaces
+brew "gtk+3"
+# Toolkit for creating graphical user interfaces
+brew "gtk4"
+# C++ interfaces for GTK+ and GNOME
+brew "gtkmm"
+# C++ interfaces for GTK+ and GNOME
+brew "gtkmm3"
+# C++ interfaces for GTK+ and GNOME
+brew "gtkmm4"
+# Improved top (interactive process viewer)
+brew "htop"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
+# International Ispell
+brew "ispell"
+# Git-compatible distributed version control system
+brew "jj"
+# Image manipulation library
+brew "jpeg"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
+# Library that implements the rsync remote-delta algorithm
+brew "librsync"
+# Access large language models from the command-line
+brew "llm"
+# Language Server for the Lua language
+brew "lua-language-server"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Command-line interface for https://speedtest.net bandwidth tests
+brew "speedtest-cli"
+# Tool to create intelligent and beautiful documentation
+brew "sphinx-doc"
+# Compressed read-only file system for Linux
+brew "squashfs"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Opinionated Lua code formatter
+brew "stylua"
+# Shell Users' Revolutionary Front Rage Against the Web
+brew "surfraw"
+# Terminal multiplexer
+brew "tmux"
+# Incremental parsing library
+brew "tree-sitter"
+# Watch files and take action when they change
+brew "watchman"
+# Internet file retriever
+brew "wget"
+# Quantum Mechanical Keyboard (QMK) Firmware
+brew "qmk/qmk/qmk"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
+# Tools for building Android applications
 cask "android-studio"
-cask "arc"
-cask "authy"
+# Securely stores and accesses AWS credentials in a development environment
+cask "aws-vault-binary"
+# Managed client-based VPN service to securely access AWS resources
+cask "aws-vpn-client"
+# Desktop password and login vault
 cask "bitwarden"
-cask "discord"
-cask "docker"
+# App to build and share containerised applications and microservices
+cask "docker-desktop"
+# Clipboard manager for developers
 cask "flycut"
+# HTTP and GraphQL Client
 cask "insomnia"
-cask "alacritty"
-cask "notion"
-cask "obsidian"
+# GUI client for PostgreSQL databases
+cask "postico"
+# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Team communication and collaboration software
 cask "slack"
+# Native GUI tool for relational databases
+cask "tableplus"
+# Open-source code editor
+cask "visual-studio-code"
+vscode "dbaeumer.vscode-eslint"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "jakebecker.elixir-ls"
+vscode "keifererikson.nightfox"
+vscode "mjmcloug.vscode-elixir"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "nash.awesome-flutter-snippets"
+vscode "statelyai.stately-vscode"
+vscode "vscodevim.vim"
+vscode "yzhang.markdown-all-in-one"
+go "cmd/go"
+go "cmd/gofmt"
+go "github.com/google/yamlfmt/cmd/yamlfmt"
+cargo "cargo-generate"
+cargo "cargo-ndk"
+cargo "ttyper"

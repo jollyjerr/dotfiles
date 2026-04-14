@@ -24,13 +24,22 @@ function deps {
 }
 
 function install {
+    local skip=("compiled")
     for dir in */; do
         if [[ -d "$dir" ]]; then
             dir_name=${dir%/}
+            if [[ " ${skip[*]} " == *" $dir_name "* ]]; then
+                continue
+            fi
             echo "INFO: stowing $dir_name"
             stow "$dir_name"
         fi
     done
+}
+
+function compile_deps {
+    echo "INFO: Building compiled tools"
+    bash "$(dirname "$0")/compiled/build.sh"
 }
 
 function cli_init {
@@ -39,5 +48,6 @@ function cli_init {
 
 deps
 install
+compile_deps
 cli_init
 echo "Done! Leeeeetttttt'sssss gooooooo!!!!!!!"
