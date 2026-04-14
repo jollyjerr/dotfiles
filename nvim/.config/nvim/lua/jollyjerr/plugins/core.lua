@@ -2,40 +2,27 @@ return {
     'nvim-lua/plenary.nvim',
     {
         'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
         build = ':TSUpdate',
         config = function()
-            require('nvim-treesitter.configs').setup({
-                modules = {},
-                ignore_install = {},
-                ensure_installed = {
-                    'lua',
-                    'rust',
-                    'typescript',
-                    'javascript',
-                    'elixir',
-                    'go',
-                    'svelte',
-                    'tsx',
-                },
-                sync_install = false,
-                auto_install = true,
-                highlight = {
-                    enable = true,
-                    disable = { 'diff' },
-                },
-                injections = {
-                    enable = true,
-                },
-                textobjects = {
-                    select = {
-                        enable = true,
-                        lookahead = true,
-                        keymaps = {
-                            ['af'] = '@function.outer',
-                            ['if'] = '@function.inner',
-                        },
-                    },
-                },
+            require('nvim-treesitter').install({
+                'lua',
+                'rust',
+                'typescript',
+                'javascript',
+                'elixir',
+                'go',
+                'svelte',
+                'tsx',
+                'markdown',
+                'markdown_inline',
+                'ruby'
+            })
+
+            vim.api.nvim_create_autocmd('FileType', {
+                callback = function()
+                    pcall(vim.treesitter.start)
+                end,
             })
         end,
     },
