@@ -100,5 +100,5 @@ fi
 
 # .zshrc.local can be used for secrets or default overrides
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-eval "$(mise activate zsh)"
 export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate zsh)"
