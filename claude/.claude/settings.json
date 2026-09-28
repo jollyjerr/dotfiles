@@ -1,4 +1,37 @@
 {
+  "apiKeyHelper": "/Users/jeremiah.tabb/.claude/kong-gateway/get-okta-token.sh",
+  "model": "claude-opus-5[1m]",
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    },
+    "claude-opus-5": {
+      "effortLevel": "low"
+    }
+  },
+  "permissions": {
+    "allow": [
+      "mcp__plugin_atlassian_atlassian__*",
+      "mcp__claude_ai_Atlassian__*"
+    ]
+  },
+  "enabledPlugins": {
+    "atlassian@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "controlroom@smartrent-claude-plugins": true,
+    "work-recap@smartrent-claude-plugins": true,
+    "superpowers@claude-plugins-official": false
+  },
+  "extraKnownMarketplaces": {
+    "smartrent-claude-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "smartrent/claude-code-plugins"
+      }
+    }
+  },
   "hooks": {
     "Stop": [
       {
