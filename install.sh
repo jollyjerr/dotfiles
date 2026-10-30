@@ -24,6 +24,7 @@ function deps {
 }
 
 function install {
+    mkdir -p ~/.claude/skills
     local skip=("compiled")
     for dir in */; do
         if [[ -d "$dir" ]]; then
@@ -46,8 +47,17 @@ function cli_init {
     ~/jollyjerr.sh init
 }
 
+function private_install {
+    if [[ -x ~/.dotfiles-smartrent/install.sh ]]; then
+        echo "INFO: Running dotfiles-smartrent install"
+        ~/.dotfiles-smartrent/install.sh
+    fi
+    ~/.claude/build-settings.sh
+}
+
 deps
 install
 compile_deps
 cli_init
+private_install
 echo "Done! Leeeeetttttt'sssss gooooooo!!!!!!!"

@@ -1,3 +1,5 @@
 .aider.tags.cach.*
 .aider.chat.history.md
 .aider.input.history
+__pycache__/
+claude/.claude/settings.json

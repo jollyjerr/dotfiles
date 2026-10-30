@@ -80,8 +80,12 @@ return {
                     :find()
             end
 
-            set('n', '<C-f>', builtin.find_files)
-            set('n', '<leader>fp', builtin.live_grep)
+            set('n', '<C-f>', function()
+                builtin.find_files({ cwd = vim.fn.getcwd(-1, -1) })
+            end)
+            set('n', '<leader>fp', function()
+                builtin.live_grep({ cwd = vim.fn.getcwd(-1, -1) })
+            end)
             set('n', '<leader>fo', builtin.oldfiles)
             set('n', '<leader>fm', builtin.marks)
             set('n', '<leader>fs', builtin.spell_suggest)
