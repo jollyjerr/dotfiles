@@ -63,5 +63,13 @@
     "claude-haiku-5-5": {
       "effortLevel": "low"
     }
+  },
+  "sandbox": {
+    "filesystem": {
+      "allowWrite": [
+        "/Users/jeremiah.tabb/.local/state/mise",
+        "/Users/jeremiah.tabb/Library/Caches/mise"
+      ]
+    }
   }
 }
